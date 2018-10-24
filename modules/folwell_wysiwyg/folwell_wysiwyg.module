@@ -1,0 +1,20 @@
+<?php
+
+function folwell_wysiwyg_editor_js_settings_alter(array &$settings) {
+  foreach (array_keys($settings['editor']['formats']) as $text_format_id) {
+    if ($settings['editor']['formats'][$text_format_id]['editor'] === 'ckeditor') {
+      if (strpos($settings['editor']['formats'][$text_format_id]['editorSettings']['extraPlugins'], 'fwcallout') !== FALSE) {
+        $settings['editor']['formats'][$text_format_id]['editorSettings']['extraPlugins'] .= ',fwcallout';
+      }
+    }
+  }
+}
+
+
+/**
+ * Implements hook_filter_info_alter().
+ */
+function folwell_wysiwyg_filter_info_alter(&$info) {
+  // Testing
+  
+}
