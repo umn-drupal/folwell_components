@@ -1,0 +1,66 @@
+<?php
+
+/**
+ * Implements hook_editor_js_settings_alter().
+ */
+function folwell_components_editor_js_settings_alter(array &$settings) {
+    if (isset($settings['editor']['formats']['rich_text'])) {
+      $styles_array = [
+        [
+          'name' => 'Regular Button',
+          'element' => 'a',
+          'attributes' => [
+            'class' => 'btn bg-maroon'
+          ]
+        ],
+        [
+          'name' => 'Small Button',
+          'element' => 'a',
+          'attributes' => [
+            'class' => 'btn bg-maroon btn-small'
+          ]
+        ],
+        [
+          'name' => 'Emphasis Button',
+          'element' => 'a',
+          'attributes' => [
+            'class' => 'btn bg-maroon btn-arrow'
+          ]
+        ],
+        [
+          'name' => 'Outline Button',
+          'element' => 'a',
+          'attributes' => [
+            'class' => 'btn btn-outline'
+          ]
+        ],
+        [
+          'name' => 'Full-Width Button',
+          'element' => 'a',
+          'attributes' => [
+            'class' => 'btn bg-maroon btn-full'
+          ]
+        ],
+        [
+          'name' => 'Give Button',
+          'element' => 'a',
+          'attributes' => [
+            'class' => 'btn btn-give btn-arrow'
+          ]
+        ],
+        [
+          'name' => 'Emphasis Link',
+          'element' => 'a',
+          'attributes' => [
+            'class' => 'emphasis'
+          ]
+        ]
+      ];
+      $settings['editor']['formats']['rich_text']['editorSettings']['stylesSet'] =
+        array_merge($settings['editor']['formats']['rich_text']['editorSettings']['stylesSet'], $styles_array);
+    }
+}
+
+function folwell_components_page_attachments(array &$page) {
+//    $page['#attached']['library'][] = 'folwell_components/folwell_components_lib';
+}

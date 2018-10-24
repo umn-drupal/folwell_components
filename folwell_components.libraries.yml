@@ -1,0 +1,12 @@
+folwell_components_lib:
+    version: 1
+    js:
+        js/editorSettings.js: {}
+    dependencies:
+        - core/jquery
+        - core/drupalSettings
+folwell_components_callout:
+    version: 1
+    css:
+        component:
+            assets/css/callout.css: {}
