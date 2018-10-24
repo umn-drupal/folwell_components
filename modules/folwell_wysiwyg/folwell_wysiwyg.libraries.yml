@@ -1,0 +1,7 @@
+folwell_wysiwyg_config:
+    version: 1
+    js:
+        js/editorConfig.js: {}
+    dependencies:
+    - core/jquery
+    - core/drupalSettings
