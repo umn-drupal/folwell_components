@@ -6,6 +6,11 @@ function folwell_wysiwyg_editor_js_settings_alter(array &$settings) {
       if (strpos($settings['editor']['formats'][$text_format_id]['editorSettings']['extraPlugins'], 'fwcallout') !== FALSE) {
         $settings['editor']['formats'][$text_format_id]['editorSettings']['extraPlugins'] .= ',fwcallout';
       }
+      if (strpos($settings['editor']['formats'][$text_format_id]['editorSettings']['extraPlugins'], 'fwpullquote') !== FALSE) {
+        $settings['editor']['formats'][$text_format_id]['editorSettings']['extraPlugins'] .= ',fwpullquote';
+      }
+      $settings['editor']['formats'][$text_format_id]['editorSettings']['customConfig'] =
+        base_path() . drupal_get_path('module', 'folwell_wysiwyg') . '/js/editorConfig.js';
     }
   }
 }
