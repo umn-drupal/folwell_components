@@ -57,7 +57,9 @@ function folwell_components_editor_js_settings_alter(array &$settings) {
         ]
       ];
       $settings['editor']['formats']['rich_text']['editorSettings']['stylesSet'] =
-        array_merge($settings['editor']['formats']['rich_text']['editorSettings']['stylesSet'], $styles_array);
+        is_array($settings['editor']['formats']['rich_text']['editorSettings']['stylesSet']) ?
+        array_merge($settings['editor']['formats']['rich_text']['editorSettings']['stylesSet'], $styles_array) :
+        $styles_array;
     }
 }
 
