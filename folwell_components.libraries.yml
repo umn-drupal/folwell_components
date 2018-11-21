@@ -10,3 +10,4 @@ folwell_components_callout:
     css:
         component:
             assets/css/callout.css: {}
+            assets/css/pullquote.css: {}
