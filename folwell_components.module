@@ -54,6 +54,41 @@ function folwell_components_editor_js_settings_alter(array &$settings) {
           'attributes' => [
             'class' => 'emphasis'
           ]
+        ],
+        [
+          'element' => 'drupal-entity',
+          'type' => 'widget',
+          'widget' => 'drupalentity',
+          'name' => '50% Image',
+          'attributes' => ['class' => 'display-50']
+        ],
+        [
+          'element' => 'drupal-entity',
+          'type' => 'widget',
+          'widget' => 'drupalentity',
+          'name' => '33% Image',
+          'attributes' => ['class' => 'display-33']
+        ],
+        [
+          'element' => 'drupal-entity',
+          'type' => 'widget',
+          'widget' => 'drupalentity',
+          'name' => '20% Image',
+          'attributes' => ['class' => 'display-20']
+        ],
+        [
+          'element' => 'drupal-entity',
+          'type' => 'widget',
+          'widget' => 'drupalentity',
+          'name' => 'Full-width Image',
+          'attributes' => ['class' => 'display-100']
+        ],
+        [
+          'element' => 'drupal-entity',
+          'type' => 'widget',
+          'widget' => 'drupalentity',
+          'name' => 'Circle Image',
+          'attributes' => ['class' => 'img-circle']
         ]
       ];
       $settings['editor']['formats']['rich_text']['editorSettings']['stylesSet'] =
@@ -66,3 +101,4 @@ function folwell_components_editor_js_settings_alter(array &$settings) {
 function folwell_components_page_attachments(array &$page) {
 //    $page['#attached']['library'][] = 'folwell_components/folwell_components_lib';
 }
+
