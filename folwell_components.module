@@ -101,4 +101,3 @@ function folwell_components_editor_js_settings_alter(array &$settings) {
 function folwell_components_page_attachments(array &$page) {
 //    $page['#attached']['library'][] = 'folwell_components/folwell_components_lib';
 }
-

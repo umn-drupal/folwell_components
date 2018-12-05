@@ -3,3 +3,5 @@ description: Non-theme features to accompany Folwell theme
 core: 8.x
 package: Custom
 type: module
+dependencies:
+    - easy_breadcrumb
