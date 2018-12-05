@@ -1,0 +1,6 @@
+folwell_accordion:
+    version: 1
+    js:
+        js/accordion.js: {}
+    dependencies:
+        - core/jquery.ui.accordion

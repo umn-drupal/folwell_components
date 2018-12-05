@@ -1,0 +1,9 @@
+name: Folwell Paragraphs
+description: Paragraph tyeps to accompany Folwell theme
+core: 8.x
+package: Custom
+type: module
+dependencies:
+    - folwell_components
+    - tablefield
+    - paragraphs

@@ -1,0 +1,9 @@
+{% extends  "paragraph.html.twig" %}
+
+{% block content %}
+    <h3 tabindex="0">
+        <span class="arrow">+</span>
+        {{ content.field_fa_accordion_item_header }}
+    </h3>
+    <div class="interior">{{ content.field_fa_accordion_item_content }}</div>
+{% endblock content %}

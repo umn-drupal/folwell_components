@@ -1,0 +1,8 @@
+{% extends 'paragraph.html.twig' %}
+
+{% block paragraph %}
+    <p class="accordion-expand-holder"><a class="accordion-expand-all" tabindex="0" href="#">Expand all</a></p>
+    <div class="accordion">
+        {{ parent() }}
+    </div>
+{% endblock paragraph %}
