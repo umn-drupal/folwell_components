@@ -1,0 +1,31 @@
+uuid: e394d44c-fd3c-428c-890a-969271e6da49
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.folwell_accordion.field_fa_accordion_items
+    - paragraphs.paragraphs_type.folwell_accordion
+  module:
+    - paragraphs
+id: paragraph.folwell_accordion.default
+targetEntityType: paragraph
+bundle: folwell_accordion
+mode: default
+content:
+  field_fa_accordion_items:
+    type: entity_reference_paragraphs
+    weight: 1
+    settings:
+      title: Paragraph
+      title_plural: Paragraphs
+      edit_mode: open
+      add_mode: dropdown
+      form_display_mode: default
+      default_paragraph_type: ''
+    third_party_settings: {  }
+    region: content
+hidden:
+  created: true
+  moderation_state: true
+  status: true
+  uid: true

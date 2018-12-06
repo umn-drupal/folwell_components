@@ -1,0 +1,21 @@
+uuid: fc70cc03-834e-4960-987c-d6d8f6d93391
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_fa_accordion_item_header
+    - paragraphs.paragraphs_type.fa_text_with_optional_header
+  module:
+    - text
+id: paragraph.fa_text_with_optional_header.field_fa_accordion_item_header
+field_name: field_fa_accordion_item_header
+entity_type: paragraph
+bundle: fa_text_with_optional_header
+label: 'Text Item Header'
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: text

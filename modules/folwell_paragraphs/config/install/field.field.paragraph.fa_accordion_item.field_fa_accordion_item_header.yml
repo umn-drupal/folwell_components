@@ -1,0 +1,21 @@
+uuid: 745830dd-a695-4658-be14-6c484e0cf5f2
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_fa_accordion_item_header
+    - paragraphs.paragraphs_type.fa_accordion_item
+  module:
+    - text
+id: paragraph.fa_accordion_item.field_fa_accordion_item_header
+field_name: field_fa_accordion_item_header
+entity_type: paragraph
+bundle: fa_accordion_item
+label: 'Accordion Item Header'
+description: ''
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: text

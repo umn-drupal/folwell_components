@@ -1,0 +1,9 @@
+uuid: bef55e5d-f6d1-4fe3-998d-20bc6d191525
+langcode: en
+status: true
+dependencies: {  }
+id: fa_text_with_optional_header
+label: 'Text with Optional Header'
+icon_uuid: null
+description: ''
+behavior_plugins: {  }

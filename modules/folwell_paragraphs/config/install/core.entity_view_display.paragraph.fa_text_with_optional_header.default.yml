@@ -1,0 +1,30 @@
+uuid: 63dfa2e9-8d64-4ec1-b939-da8b795755dc
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.fa_text_with_optional_header.field_fa_accordion_item_header
+    - field.field.paragraph.fa_text_with_optional_header.field_fa_text_item_body
+    - paragraphs.paragraphs_type.fa_text_with_optional_header
+  module:
+    - text
+id: paragraph.fa_text_with_optional_header.default
+targetEntityType: paragraph
+bundle: fa_text_with_optional_header
+mode: default
+content:
+  field_fa_accordion_item_header:
+    weight: 0
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    type: text_default
+    region: content
+  field_fa_text_item_body:
+    weight: 1
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    type: text_default
+    region: content
+hidden: {  }

@@ -1,0 +1,24 @@
+uuid: 438e282b-521b-42be-8c0f-3df33b617166
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.folwell_accordion.field_fa_accordion_items
+    - paragraphs.paragraphs_type.folwell_accordion
+  module:
+    - entity_reference_revisions
+id: paragraph.folwell_accordion.default
+targetEntityType: paragraph
+bundle: folwell_accordion
+mode: default
+content:
+  field_fa_accordion_items:
+    type: entity_reference_revisions_entity_view
+    weight: 1
+    label: hidden
+    settings:
+      view_mode: default
+      link: ''
+    third_party_settings: {  }
+    region: content
+hidden: {  }

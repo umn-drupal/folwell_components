@@ -1,0 +1,33 @@
+uuid: b2365385-eaaa-47a2-8ba0-e80bef4c2299
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.fa_accordion_item.field_fa_accordion_item_content
+    - field.field.paragraph.fa_accordion_item.field_fa_accordion_item_header
+    - paragraphs.paragraphs_type.fa_accordion_item
+  module:
+    - entity_reference_revisions
+    - text
+id: paragraph.fa_accordion_item.default
+targetEntityType: paragraph
+bundle: fa_accordion_item
+mode: default
+content:
+  field_fa_accordion_item_content:
+    type: entity_reference_revisions_entity_view
+    weight: 1
+    label: hidden
+    settings:
+      view_mode: default
+      link: ''
+    third_party_settings: {  }
+    region: content
+  field_fa_accordion_item_header:
+    weight: 0
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    type: text_default
+    region: content
+hidden: {  }

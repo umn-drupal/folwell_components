@@ -1,0 +1,44 @@
+uuid: 9db2595c-37b5-4293-9ff0-008e9680750c
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_fa_accordion_item_content
+    - paragraphs.paragraphs_type.fa_accordion_item
+    - paragraphs.paragraphs_type.fa_table
+    - paragraphs.paragraphs_type.fa_text_with_optional_header
+    - paragraphs.paragraphs_type.folwell_accordion
+  module:
+    - entity_reference_revisions
+id: paragraph.fa_accordion_item.field_fa_accordion_item_content
+field_name: field_fa_accordion_item_content
+entity_type: paragraph
+bundle: fa_accordion_item
+label: 'Accordion Item Content'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:paragraph'
+  handler_settings:
+    negate: 0
+    target_bundles:
+      fa_table: fa_table
+      fa_text_with_optional_header: fa_text_with_optional_header
+      folwell_accordion: folwell_accordion
+    target_bundles_drag_drop:
+      fa_table:
+        enabled: true
+        weight: 6
+      fa_accordion_item:
+        weight: 7
+        enabled: false
+      fa_text_with_optional_header:
+        enabled: true
+        weight: 8
+      folwell_accordion:
+        enabled: true
+        weight: 9
+field_type: entity_reference_revisions

@@ -1,0 +1,31 @@
+uuid: 5c3b647e-afc4-4b57-8c2c-63785c46fd30
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.fa_table.field_fa_accordion_item_header
+    - field.field.paragraph.fa_table.field_fa_table
+    - paragraphs.paragraphs_type.fa_table
+  module:
+    - tablefield
+    - text
+id: paragraph.fa_table.default
+targetEntityType: paragraph
+bundle: fa_table
+mode: default
+content:
+  field_fa_accordion_item_header:
+    weight: 0
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    type: text_default
+    region: content
+  field_fa_table:
+    weight: 1
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    type: tablefield
+    region: content
+hidden: {  }

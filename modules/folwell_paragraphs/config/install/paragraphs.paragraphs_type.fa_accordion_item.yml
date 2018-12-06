@@ -1,0 +1,9 @@
+uuid: bc9ae67c-c6e3-498a-8485-bddec4b97cde
+langcode: en
+status: true
+dependencies: {  }
+id: fa_accordion_item
+label: 'Accordion Item'
+icon_uuid: null
+description: ''
+behavior_plugins: {  }

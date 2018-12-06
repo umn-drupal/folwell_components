@@ -1,0 +1,21 @@
+uuid: 8f237e02-64fc-4efc-8c9f-912beef40e8c
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_fa_text_item_body
+    - paragraphs.paragraphs_type.fa_text_with_optional_header
+  module:
+    - text
+id: paragraph.fa_text_with_optional_header.field_fa_text_item_body
+field_name: field_fa_text_item_body
+entity_type: paragraph
+bundle: fa_text_with_optional_header
+label: 'Text Item Body'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: text_long
