@@ -5,9 +5,13 @@ folwell_components_lib:
     dependencies:
         - core/jquery
         - core/drupalSettings
-folwell_components_callout:
+fwcallout:
     version: 1
     css:
         component:
-            assets/css/callout.css: {}
-            assets/css/pullquote.css: {}
+            "assets/css/callout.css": {}
+fwpullquote:
+    version: 1
+    css:
+        component:
+            "assets/css/pullquote.css": {}

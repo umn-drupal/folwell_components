@@ -4,6 +4,7 @@
  * Implements hook_editor_js_settings_alter().
  */
 function folwell_components_editor_js_settings_alter(array &$settings) {
+  // Add wysiwyg styles for buttons/links and image styles.
     if (isset($settings['editor']['formats']['rich_text'])) {
       $styles_array = [
         [
@@ -99,5 +100,53 @@ function folwell_components_editor_js_settings_alter(array &$settings) {
 }
 
 function folwell_components_page_attachments(array &$page) {
-//    $page['#attached']['library'][] = 'folwell_components/folwell_components_lib';
+  // Load in styles for component if component is actually in-use
+  $plugin_libraries = [
+    'fwcallout' => FALSE,
+    'fwpullquote' => FALSE
+  ];
+  $editor_manager = \Drupal::entityTypeManager()->getStorage('editor');
+  $editors = $editor_manager->loadMultiple();
+  foreach ($editors as $editor) {
+    // Iterate through configured editors to see if plugin buttons are used. If
+    // libraries have previously been found, we don't need to continue here.
+    if (in_array(FALSE, $plugin_libraries)) {
+      $editor_settings = $editor->getSettings();
+      $buttons = _flatten_array($editor_settings['toolbar']);
+      foreach ($plugin_libraries as $plugin => &$load) {
+        if (!$load) {
+          if (in_array($plugin, $buttons)) {
+            $load = TRUE;
+          }
+        }
+      }
+    }
+  }
+  $loaded_libraries = array_map(
+    function($lib) {
+      return 'folwell_components/' . $lib;
+    },
+    array_keys(
+      array_filter($plugin_libraries,
+        function($val) {
+          return $val;
+        }
+      )
+    )
+  );
+  $page['#attached']['library'] = !empty($page['#attached']['library']) ?
+    array_merge($page['#attached']['library'], $loaded_libraries) : $loaded_libraries;
+}
+
+/**
+ * @param $array
+ * Take a nested array and flatten it down to single array of all its values
+ * @return array
+ */
+function _flatten_array($array) {
+  $return = [];
+  array_walk_recursive($array, function($a) use (&$return) {
+    $return[] = $a;
+  });
+  return $return;
 }
