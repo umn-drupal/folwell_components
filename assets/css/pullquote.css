@@ -6,6 +6,8 @@
 
 .pullquote.display-100 { float: none; width: auto; }
 
+blockquote + .pullquote { margin-top: .6em; }
+
 @media (max-width: 30em) { .pullquote { margin: 1em 0 !important; line-height: 1.2em; } }
 
 /*# sourceMappingURL=maps/pullquote.css.map */

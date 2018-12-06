@@ -31,6 +31,7 @@
     transform: translate(-50%, -50%);
     width: 8rem;
   }
+
   cite {
     display: block;
     font-style: italic;
@@ -39,14 +40,17 @@
     margin-top: 1em;
     color: $gray-medium;
   }
-}
-.pullquote.display-100 {
-  float: none;
-  width: auto;
-}
 
-@include breakpoint(max-width $small-screen) {
-  .pullquote {
+  &.display-100 {
+    float: none;
+    width: auto;
+  }
+
+  blockquote + & {
+    margin-top: .6em;
+  }
+
+  @include breakpoint(max-width $small-screen) {
     margin: 1em 0 !important;
     line-height: 1.2em;
   }
