@@ -8,22 +8,10 @@
         active: false,
         collapsible: true,
         heightStyle: 'content',
-        header: 'h3'
-      });
-      contentAreas = $('.ui-accordion-content').hide();
-
-      expandLink.click(function(){
-        var isAllOpen = $(this).data('isAllOpen');
-
-        contentAreas[isAllOpen? 'hide': 'show']()
-            .trigger(isAllOpen? 'hide': 'show');
+        header: 'h3',
       });
 
-      expandLink.keypress(function(e) {
-        if (e.which == 13) {
-          $('a.accordion-expand-all').trigger('click');
-        }
-      });
+      contentAreas = ($('.ui-accordion-header'), $('.ui-accordion-content'));
 
       // when panels open or close, check to see if they're all open
       contentAreas.on({
@@ -48,6 +36,21 @@
                 .data('isAllOpen', false);
             $( '.ui-accordion-header' ).removeClass( 'ui-state-active');
           }
+        }
+      });
+
+      contentAreas.hide();
+
+      expandLink.click(function(){
+        var isAllOpen = $(this).data('isAllOpen');
+
+        contentAreas[isAllOpen? 'hide': 'show']()
+            .trigger(isAllOpen? 'hide': 'show');
+      });
+
+      expandLink.keypress(function(e) {
+        if (e.which == 13) {
+          $('a.accordion-expand-all').trigger('click');
         }
       });
 
