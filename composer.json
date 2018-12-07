@@ -1,0 +1,13 @@
+{
+    "name": "umn/folwell_components",
+    "description": "Modular components for using Folwell theme in sites",
+    "type": "drupal-module-custom",
+    "authors": [
+        {
+            "name": "UMN Drupal Administrators",
+            "email": "drupa001@umn.edu"
+        }
+    ],
+	"minimum-stability": "dev",
+    "require": {}
+}
