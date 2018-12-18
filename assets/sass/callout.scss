@@ -58,20 +58,16 @@
   }
 }
 
-.callout-content {
-  padding: 1.25em;
-}
-
 .callout-border-all {
-  border: $accent-border;
+  @include accent-border();
 }
 
 .callout-border-top {
-  border-top: $accent-border;
+  @include accent-border(top);
 }
 
 .callout-border-left {
-  border-left: $accent-border;
+  @include accent-border(left);
 }
 
 .callout-background {

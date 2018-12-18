@@ -6,6 +6,15 @@ $gray-medium: #777677;
 $maroon-light: #900021;
 $white: #fff;
 $callout-break: max-width 50em;
-$accent-border: 4px solid $gold;
+$accent-border: solid $gold;
 $font-stack-georgia: Georgia, Times, 'Times New Roman', serif;
 $small-screen: 30em !default;
+
+@mixin accent-border($side: all) {
+  @if ($side == all) {
+    border: 4px $accent-border;
+  }
+  @else {
+    border-#{$side}: 6px $accent-border;
+  }
+}
