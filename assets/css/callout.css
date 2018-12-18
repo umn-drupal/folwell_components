@@ -16,13 +16,11 @@
 
 .callout-horizontal > div { flex: 1; }
 
-.callout-content { padding: 1.25em; }
-
 .callout-border-all { border: 4px solid #fc3; }
 
-.callout-border-top { border-top: 4px solid #fc3; }
+.callout-border-top { border-top: 6px solid #fc3; }
 
-.callout-border-left { border-left: 4px solid #fc3; }
+.callout-border-left { border-left: 6px solid #fc3; }
 
 .callout-background { background-color: #f0efee; }
 
