@@ -1,7 +1,7 @@
 //Pullquote and Blockquote: Folwell Theme Component
 @import 'includes';
 
-.pullquote {
+aside.pullquote {
   border-style: solid;
   border-width: 0;
   border-bottom: 0;
@@ -12,7 +12,7 @@
   font-size: 1.9em;
   font-weight: 400;
   line-height: 1.5em;
-  margin: 0 1em 1.3em;
+  margin: 1em 1em 1.3em;
   padding: 1.3em 1em 0 1em;
   position: relative;
 
@@ -32,6 +32,10 @@
     width: 8rem;
   }
 
+  .pullquote-content {
+    margin: 0;
+  }
+
   cite {
     display: block;
     font-style: italic;
@@ -44,10 +48,6 @@
   &.display-100 {
     float: none;
     width: auto;
-  }
-
-  blockquote + & {
-    margin-top: .6em;
   }
 
   @include breakpoint(max-width $small-screen) {
