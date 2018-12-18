@@ -27,6 +27,6 @@ function folwell_paragraphs_theme($existing, $type, $theme, $path) {
 function folwell_paragraphs_preprocess_paragraph(&$variables) {
   $paragraph = $variables['paragraph'];
   if ($paragraph->getType() == 'folwell_accordion') {
-    $variables['#attached']['library'][] = 'folwell_paragraphs/folwell_accordion';
+    $variables['#attached']['library'][] = 'folwell_components/folwell_accordion';
   }
 }

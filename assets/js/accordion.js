@@ -41,7 +41,8 @@
 
       contentAreas.hide();
 
-      expandLink.click(function(){
+      expandLink.off().on('click', function(evt){
+        evt.preventDefault();
         var isAllOpen = $(this).data('isAllOpen');
 
         contentAreas[isAllOpen? 'hide': 'show']()

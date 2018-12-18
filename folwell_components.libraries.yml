@@ -1,10 +1,3 @@
-folwell_components_lib:
-    version: 1
-    js:
-        js/editorSettings.js: {}
-    dependencies:
-        - core/jquery
-        - core/drupalSettings
 fwcallout:
     version: 1
     css:
@@ -15,3 +8,9 @@ fwpullquote:
     css:
         component:
             "assets/css/pullquote.css": {}
+folwell_accordion:
+    version: 1
+    js:
+        assets/js/accordion.js: {}
+    dependencies:
+        - core/jquery.ui.accordion
