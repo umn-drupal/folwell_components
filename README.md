@@ -25,4 +25,4 @@ The main Folwell Components module includes CSS/JavaScript for Folwell Accordion
 
 ## Folwell WYSIWYG
 
-The Folwell WYSIWYG module provides toolbar buttons that can be added to your text formats to add Callouts and Pull quotes in your WYSIWYG editor. Use the ![Grey button with a 'C'](modules/folwell_wysiwyg/js/plugins/fwcallout/icons/fwcallout.png) button to add a Callout (a dialog will appear with additional options). Use the ![Grey button with a 'P'](modules/folwell_wysiwyg/js/plugins/fwpullquote/icons/fwpullquote.png) button to add a Pull quote.
+The Folwell WYSIWYG module provides toolbar buttons that can be added to your text formats to add Callouts and Pull quotes in your WYSIWYG editor. Use the ![Small button with a 'C'](modules/folwell_wysiwyg/js/plugins/fwcallout/icons/fwcallout.png) button to add a Callout (a dialog will appear with additional options). Use the ![Small button with a 'P'](modules/folwell_wysiwyg/js/plugins/fwpullquote/icons/fwpullquote.png) button to add a Pull quote.
