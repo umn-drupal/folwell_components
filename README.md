@@ -26,3 +26,9 @@ The main Folwell Components module includes CSS/JavaScript for Folwell Accordion
 ## Folwell WYSIWYG
 
 The Folwell WYSIWYG module provides toolbar buttons that can be added to your text formats to add Callouts and Pull quotes in your WYSIWYG editor. Use the ![Small button with a 'C'](modules/folwell_wysiwyg/js/plugins/fwcallout/icons/fwcallout.png) button to add a Callout (a dialog will appear with additional options). Use the ![Small button with a 'P'](modules/folwell_wysiwyg/js/plugins/fwpullquote/icons/fwpullquote.png) button to add a Pull quote.
+
+## Folwell Paragraphs
+
+Currently, the Folwell Paragraphs module only includes an Accordion component, but more (e.g. image callouts) will be included in future releases. After enabling this module, new paragraph types for Folwell Accordion, Accordion Item, Text with Optional Header, and Table will be available on your site.
+
+To use an accordion on your pages, add a Paragraph field to the appropriate content type that includes the Folwell Accordion paragraph type. When you add a Folwell Accordion paragraph to a node, you can then add Accordion Items to that paragraph. Those have a required header (so you have something to click on to activate the accordion), and you can then add the other paragraph types listed above to the accordion content (including nesting accordions, though that hasn't been extensively tested).
