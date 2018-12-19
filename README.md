@@ -1,6 +1,6 @@
 # Folwell Components
 
-This module and it's two submodules, Folwell Paragraphs and Folwell WYSIWYG, supplement the Folwell theme with additional modular styles and either WYSIWYG styles and plugins, or Paragraph types that can be used to add those components to your sites.
+This module and it's two submodules, Folwell Paragraphs and [Folwell WYSIWYG](#folwell-wysiwyg), supplement the Folwell theme with additional modular styles and either WYSIWYG styles and plugins, or Paragraph types that can be used to add those components to your sites.
 
 The main Folwell Components module includes CSS/JavaScript for Folwell Accordions, Callouts, and Pull Quotes, and adds the following styles to the CKEditor styles dropdown for the Rich Text text format:
 
