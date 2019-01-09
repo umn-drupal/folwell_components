@@ -1,0 +1,15 @@
+{% extends  "paragraph.html.twig" %}
+{% set container_attr = create_attribute() %}
+{% set callout_styles = ['callout', content.field_fw_callout_style.0|e('html_attr')] %}
+{% block paragraph %}
+    {% set classes = classes|merge(['callout-image']) %}
+    <aside{{ attributes.addClass(classes) }}>
+        {% block content %}
+            {{ content.field_fw_callout_image }}
+            <div{{ container_attr.addClass(callout_styles) }}>
+            <header class="callout-header"><h1>{{ content.field_fa_accordion_item_header.0 }}</h1></header>
+            {{ content.field_fa_text_item_body }}
+            </div>
+        {% endblock %}
+    </aside>
+{% endblock paragraph %}
