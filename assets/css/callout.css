@@ -35,7 +35,7 @@
 
 @media (max-width: 50em) { .callout-overlay.display-100, .callout-overlay.align-right, .callout-overlay.align-left, .callout-overlay.bg-gold-light { position: relative; top: 0; width: 100% !important; left: 0; margin-bottom: 1em !important; } }
 
-.callout-image img { width: 100%; }
+.callout-image img { width: 100%; height: auto; display: block; }
 
 .callout-image + .callout { margin-top: 0; }
 
