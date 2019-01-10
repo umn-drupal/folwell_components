@@ -8,13 +8,16 @@
 
 .callout { padding: 1.25em; margin-bottom: 1em; }
 
-.callout:first-child { margin-top: 30px; }
+.callout:first-child { margin-top: 0; }
 
-@media (max-width: 50em) { .callout:first-child { margin-top: 0; } }
+@media (min-width: 50em) { .callout:first-child { margin-top: 30px; } }
 
-.callout-horizontal { display: flex; background: #ffde7a; }
+.callout-horizontal { display: block; background: #ffde7a; }
 
-.callout-horizontal > div { flex: 1; }
+.callout-horizontal article { margin: 0; }
+
+@media (min-width: 50em) { .callout-horizontal { display: flex; flex-direction: row-reverse; }
+  .callout-horizontal > div { flex: 1; } }
 
 .callout-border-all { border: 4px solid #fc3; }
 
@@ -25,15 +28,19 @@
 .callout-background { background-color: #f0efee; }
 
 /* Specific callout overlay styles */
-.callout-overlay { padding: 1.1em; }
+.callout-overlay { padding: 1.1em; position: absolute; }
 
-.callout-overlay.display-100 { position: absolute; bottom: 0; }
+.callout-overlay.display-100 { bottom: 0; }
 
-.callout-overlay.align-right { position: absolute; right: 2em; top: 2em; }
+.callout-overlay.top-right, .callout-overlay.top-left { top: 2em; }
 
-.callout-overlay.align-left { position: absolute; left: 2em; top: 2em; }
+.callout-overlay.bottom-right, .callout-overlay.bottom-left { bottom: 2em; }
 
-@media (max-width: 50em) { .callout-overlay.display-100, .callout-overlay.align-right, .callout-overlay.align-left, .callout-overlay.bg-gold-light { position: relative; top: 0; width: 100% !important; left: 0; margin-bottom: 1em !important; } }
+.callout-overlay.top-right, .callout-overlay.bottom-right { right: 2em; }
+
+.callout-overlay.top-left, .callout-overlay.bottom-left { left: 2em; }
+
+@media (max-width: 50em) { .callout-overlay { position: relative; top: 0; width: 100% !important; left: 0; margin-bottom: 1em !important; } }
 
 .callout-image img { width: 100%; height: auto; display: block; }
 

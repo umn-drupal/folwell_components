@@ -1,5 +1,5 @@
 // Callouts: Folwell Theme Component
-@import 'includes';
+@import "includes";
 
 // Base Callout Content
 .callout,
@@ -41,20 +41,29 @@
   margin-bottom: 1em;
 
   &:first-child {
-    margin-top: 30px;
+    margin-top: 0;
 
     @include breakpoint($callout-break) {
-      margin-top: 0;
+      margin-top: 30px;
     }
   }
 }
 
 .callout-horizontal {
-  display: flex;
+  display: block;
   background: $gold-light;
 
-  &>div {
-    flex:1;
+  article {
+    margin: 0;
+  }
+
+  @include breakpoint($callout-break) {
+    display: flex;
+    flex-direction: row-reverse;
+
+    & > div {
+      flex: 1;
+    }
   }
 }
 
@@ -77,35 +86,38 @@
 /* Specific callout overlay styles */
 .callout-overlay {
   padding: 1.1em;
+  position: absolute;
 
   &.display-100 {
-    position: absolute;
     bottom: 0;
   }
 
-  &.align-right {
-    position: absolute;
+  &.top-right,
+  &.top-left {
+    top: 2em;
+  }
+
+  &.bottom-right,
+  &.bottom-left {
+    bottom: 2em;
+  }
+
+  &.top-right,
+  &.bottom-right {
     right: 2em;
-    top: 2em;
   }
 
-  &.align-left {
-    position: absolute;
+  &.top-left,
+  &.bottom-left {
     left: 2em;
-    top: 2em;
   }
 
-  @include breakpoint($callout-break) {
-    &.display-100,
-    &.align-right,
-    &.align-left,
-    &.bg-gold-light {
+  @include breakpoint(max-width $callout-break) {
       position: relative;
       top: 0;
-      width:100% !important;
+      width: 100% !important;
       left: 0;
-      margin-bottom: 1em !important;  
-    }
+      margin-bottom: 1em !important;
   }
 }
 
