@@ -23,17 +23,24 @@ function folwell_paragraphs_theme($existing, $type, $theme, $path) {
     ],
     'paragraph__folwell_callout' => [
       'base hook' => 'paragraph'
+    ],
+    'paragraph__folwell_overlay' => [
+      'base hook' => 'paragraph'
     ]
   ];
 }
 
 function folwell_paragraphs_preprocess_paragraph(&$variables) {
   $paragraph = $variables['paragraph'];
-  if ($paragraph->getType() == 'folwell_accordion') {
+  $type = $paragraph->getType();
+  if ($type == 'folwell_accordion') {
     $variables['#attached']['library'][] = 'folwell_components/folwell_accordion';
-  } else if ($paragraph->getType() == 'folwell_callout') {
-    $style_field = $variables['content']['field_fw_callout_style']['#items'];
-    $variables['style_class'] = $style_field->get(0)->getString();
+  }
+  if ($type == 'folwell_callout' || $type == 'folwell_overlay') {
     $variables['#attached']['library'][] = 'folwell_components/fwcallout';
+    if ($type == 'folwell_callout') {
+      $style_field = $variables['content']['field_fw_callout_style']['#items'];
+      $variables['style_class'] = $style_field->get(0)->getString();
+    }
   }
 }
