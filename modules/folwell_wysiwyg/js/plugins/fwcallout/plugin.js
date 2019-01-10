@@ -36,7 +36,7 @@
           "aside(!callout,callout-background,callout-border-all,callout-border-top,callout-border-left,display-100,display-50,display-33,display-25,align-none,align-right,align-left); header(!callout-header); div(!callout-content)",
         requiredContent: "aside(!callout); div(!callout-content)",
         upcast: function(element) {
-          return element.name == "aside" && element.hasClass("callout");
+          return element.name === "aside" && element.hasClass("callout");
         },
         init: function() {
           if (this.element.hasClass("callout-background")) {

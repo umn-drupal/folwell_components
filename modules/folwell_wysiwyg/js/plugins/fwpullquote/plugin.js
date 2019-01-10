@@ -26,7 +26,7 @@
         requiredContent:
           "aside(!pullquote); p(!pullquote-content); cite(!pullquote-citation)",
         upcast: function(element) {
-          return element.name == "aside" && element.hasClass("pullquote");
+          return element.name === "aside" && element.hasClass("pullquote");
         },
         init: function() {
           // if (this.element.hasClass('callout-background')) {
