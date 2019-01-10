@@ -1,62 +1,59 @@
-(function ($, Drupal) {
+(function($, Drupal) {
   Drupal.behaviors.folwellAccordion = {
     attach: function() {
-      var accordion = $('.paragraph--type--folwell-accordion .field--name-field-fa-accordion-items'),
-          expandLink = $('.accordion-expand-all'),
-          contentAreas;
+      var accordion = $(
+          ".paragraph--type--folwell-accordion .field--name-field-fa-accordion-items"
+        ),
+        expandLink = $(".accordion-expand-all"),
+        contentAreas;
       accordion.accordion({
         active: false,
         collapsible: true,
-        heightStyle: 'content',
-        header: 'h3',
+        heightStyle: "content",
+        header: "h3"
       });
 
-      contentAreas = ($('.ui-accordion-header'), $('.ui-accordion-content'));
+      contentAreas = ($(".ui-accordion-header"), $(".ui-accordion-content"));
 
       // when panels open or close, check to see if they're all open
       contentAreas.on({
         // whenever we open a panel, check to see if they're all open
         // if all open, swap the button to collapser
-        show: function(){
-          var isAllOpen = !contentAreas.is(':hidden');
-          if(isAllOpen){
-            expandLink.text('Collapse All')
-                .data('isAllOpen', true);
+        show: function() {
+          var isAllOpen = !contentAreas.is(":hidden");
+          if (isAllOpen) {
+            expandLink.text("Collapse All").data("isAllOpen", true);
             //expandLink.addClass('ui-accordion-header-active');
-            $( '.ui-accordion-header' ).addClass( 'ui-state-active');
-
+            $(".ui-accordion-header").addClass("ui-state-active");
           }
         },
         // whenever we close a panel, check to see if they're all open
         // if not all open, swap the button to expander
-        hide: function(){
-          var isAllOpen = !contentAreas.is(':hidden');
-          if(!isAllOpen){
-            expandLink.text('Expand all')
-                .data('isAllOpen', false);
-            $( '.ui-accordion-header' ).removeClass( 'ui-state-active');
+        hide: function() {
+          var isAllOpen = !contentAreas.is(":hidden");
+          if (!isAllOpen) {
+            expandLink.text("Expand all").data("isAllOpen", false);
+            $(".ui-accordion-header").removeClass("ui-state-active");
           }
         }
       });
 
       contentAreas.hide();
 
-      expandLink.off().on('click', function(evt){
+      expandLink.off().on("click", function(evt) {
         evt.preventDefault();
-        var isAllOpen = $(this).data('isAllOpen');
+        var isAllOpen = $(this).data("isAllOpen");
 
-        contentAreas[isAllOpen? 'hide': 'show']()
-            .trigger(isAllOpen? 'hide': 'show');
+        contentAreas[isAllOpen ? "hide" : "show"]().trigger(
+          isAllOpen ? "hide" : "show"
+        );
       });
 
       expandLink.keypress(function(e) {
         if (e.which == 13) {
-          $('a.accordion-expand-all').trigger('click');
+          $("a.accordion-expand-all").trigger("click");
         }
       });
-
     }
   };
 })(jQuery, Drupal);
-
-

@@ -3,28 +3,30 @@
  * Functionality to enable pullquote functionality in CKEditor.
  */
 
-(function ($, Drupal, CKEDITOR) {
-  'use strict';
-  CKEDITOR.plugins.add('fwpullquote', {
-    requires: 'widget',
-    icons: 'fwpullquote',
+(function($, Drupal, CKEDITOR) {
+  "use strict";
+  CKEDITOR.plugins.add("fwpullquote", {
+    requires: "widget",
+    icons: "fwpullquote",
     init: function(editor) {
-      editor.widgets.add('fwpullquote', {
-        button: 'Add a pull quote',
+      editor.widgets.add("fwpullquote", {
+        button: "Add a pull quote",
         // dialog: 'fwpullquote',
         template:
           '<aside class="pullquote">' +
-            '<p class="pullquote-content">This is an example of a pull quote. Use this to highlight text that is within the content of your web page.</p>' +
-            '<cite class="pullquote-citation">Your pullquote should include a citation</cite>' +
-          '</aside>',
+          '<p class="pullquote-content">This is an example of a pull quote. Use this to highlight text that is within the content of your web page.</p>' +
+          '<cite class="pullquote-citation">Your pullquote should include a citation</cite>' +
+          "</aside>",
         editables: {
-          'pullquote-content': '.pullquote-content',
-          'pullquote-citation': '.pullquote-citation'
+          "pullquote-content": ".pullquote-content",
+          "pullquote-citation": ".pullquote-citation"
         },
-        allowedContent: 'aside(!pullquote); p(!pullquote-content); cite(!pullquote-citation)',
-        requiredContent: 'aside(!pullquote); p(!pullquote-content); cite(!pullquote-citation)',
+        allowedContent:
+          "aside(!pullquote); p(!pullquote-content); cite(!pullquote-citation)",
+        requiredContent:
+          "aside(!pullquote); p(!pullquote-content); cite(!pullquote-citation)",
         upcast: function(element) {
-          return element.name == 'aside' && element.hasClass('pullquote');
+          return element.name == "aside" && element.hasClass("pullquote");
         },
         init: function() {
           // if (this.element.hasClass('callout-background')) {
@@ -49,9 +51,9 @@
       });
       // CKEDITOR.dialog.add('fwcallout', this.path + 'dialogs/fwcallout.js' );
       if (editor.ui.addButton) {
-        editor.ui.addButton('fwpullquote', {
-          label: 'Pull Quote',
-          command: 'fwpullquote'
+        editor.ui.addButton("fwpullquote", {
+          label: "Pull Quote",
+          command: "fwpullquote"
         });
       }
     }
