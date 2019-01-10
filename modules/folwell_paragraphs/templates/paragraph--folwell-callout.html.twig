@@ -1,14 +1,21 @@
 {% extends  "paragraph.html.twig" %}
 {% set container_attr = create_attribute() %}
-{% set callout_styles = ['callout', content.field_fw_callout_style.0|e('html_attr')] %}
+{% set callout_styles = [
+    'callout',
+    style_class == 'callout-horizontal' ? '' : style_class|clean_class
+] %}
+{% set parent_styles = [
+    'callout-image',
+    style_class == 'callout-horizontal' ? style_class|clean_class : ''
+] %}
 {% block paragraph %}
-    {% set classes = classes|merge(['callout-image']) %}
+    {% set classes = classes|merge(parent_styles) %}
     <aside{{ attributes.addClass(classes) }}>
         {% block content %}
             {{ content.field_fw_callout_image }}
             <div{{ container_attr.addClass(callout_styles) }}>
-            <header class="callout-header"><h1>{{ content.field_fa_accordion_item_header.0 }}</h1></header>
-            {{ content.field_fa_text_item_body }}
+                <header class="callout-header"><h1>{{ content.field_fa_accordion_item_header.0 }}</h1></header>
+                {{ content.field_fa_text_item_body }}
             </div>
         {% endblock %}
     </aside>
