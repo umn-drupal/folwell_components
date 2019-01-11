@@ -1,10 +1,37 @@
 // Callouts: Folwell Theme Component
 @import "includes";
 
+%callout-h1 {
+  font-size: 2em;
+  font-weight: 700;
+  @include breakpoint($callout-break) {
+    font-size: 1.777777778em;
+  }
+}
+
+%callout-h2 {
+  font-size: 1.5625em;
+  font-weight: 600;
+  line-height: 1.512;
+  margin: 1.6em 0 1em;
+  @include breakpoint($callout-break) {
+    font-size: 1.388888889em;
+  }
+}
+
+%callout-h3 {
+  font-size: 1.375em;
+  font-weight: 600;
+  @include breakpoint($callout-break) {
+    font-size: 1.222222222em;
+  }
+}
+
 // Base Callout Content
 .callout,
 .callout-overlay,
-.callout-horizontal {
+.callout-horizontal,
+.callout-image {
   h5,
   h4,
   h3,
@@ -36,6 +63,22 @@
   }
 }
 
+.callout,
+.callout-horizontal,
+.callout-image {
+  h1 {
+    @extend %callout-h1;
+  }
+
+  h2 {
+    @extend %callout-h2;
+  }
+
+  h3 {
+    @extend %callout-h3;
+  }
+}
+
 .callout {
   padding: 1.25em;
   margin-bottom: 1em;
@@ -53,10 +96,6 @@
   display: block;
   background: $gold-light;
 
-  article {
-    margin: 0;
-  }
-
   @include breakpoint($callout-break) {
     display: flex;
     flex-direction: row-reverse;
@@ -64,6 +103,13 @@
     & > div {
       flex: 1;
     }
+  }
+}
+
+.callout-image,
+.callout-horizontal {
+  article {
+    margin: 0;
   }
 }
 
@@ -87,6 +133,14 @@
 .callout-overlay {
   padding: 1.1em;
   position: absolute;
+
+  h1 {
+    @extend %callout-h2;
+  }
+
+  h2 {
+    @extend %callout-h3;
+  }
 
   &.display-100 {
     bottom: 0;
@@ -113,11 +167,11 @@
   }
 
   @include breakpoint(max-width $callout-break) {
-      position: relative;
-      top: 0;
-      width: 100% !important;
-      left: 0;
-      margin-bottom: 1em !important;
+    position: relative;
+    top: 0;
+    width: 100% !important;
+    left: 0;
+    margin-bottom: 1em !important;
   }
 }
 
