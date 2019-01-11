@@ -4,6 +4,14 @@
     'callout',
     style_class == 'callout-horizontal' ? '' : style_class|clean_class
 ] %}
+{% set overlay_styles = [
+    'bg-gold-light',
+    'top-left',
+    'display-33'
+] %}
+{% if style_class == 'callout-overlay' %}
+    {% set callout_styles = callout_styles|merge(overlay_styles) %}
+{% endif %}
 {% set parent_styles = [
     'callout-image',
     style_class == 'callout-horizontal' ? style_class|clean_class : ''

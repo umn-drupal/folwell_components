@@ -35,12 +35,9 @@ function folwell_paragraphs_preprocess_paragraph(&$variables) {
   $type = $paragraph->getType();
   if ($type == 'folwell_accordion') {
     $variables['#attached']['library'][] = 'folwell_components/folwell_accordion';
-  }
-  if ($type == 'folwell_callout' || $type == 'folwell_overlay') {
+  } else if ($type == 'folwell_callout') {
     $variables['#attached']['library'][] = 'folwell_components/fwcallout';
-    if ($type == 'folwell_callout') {
-      $style_field = $variables['content']['field_fw_callout_style']['#items'];
-      $variables['style_class'] = $style_field->get(0)->getString();
-    }
+    $style_field = $variables['content']['field_fw_callout_style']['#items'];
+    $variables['style_class'] = $style_field->get(0)->getString();
   }
 }
