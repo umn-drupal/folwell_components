@@ -11,21 +11,21 @@ function folwell_components_editor_js_settings_alter(array &$settings) {
           'name' => 'Regular Button',
           'element' => 'a',
           'attributes' => [
-            'class' => 'btn bg-maroon'
+            'class' => 'bg-maroon btn'
           ]
         ],
         [
           'name' => 'Small Button',
           'element' => 'a',
           'attributes' => [
-            'class' => 'btn bg-maroon btn-small'
+            'class' => 'bg-maroon btn btn-small'
           ]
         ],
         [
           'name' => 'Emphasis Button',
           'element' => 'a',
           'attributes' => [
-            'class' => 'btn bg-maroon btn-arrow'
+            'class' => 'bg-maroon btn btn-arrow'
           ]
         ],
         [
@@ -39,14 +39,14 @@ function folwell_components_editor_js_settings_alter(array &$settings) {
           'name' => 'Full-Width Button',
           'element' => 'a',
           'attributes' => [
-            'class' => 'btn bg-maroon btn-full'
+            'class' => 'bg-maroon btn btn-full'
           ]
         ],
         [
           'name' => 'Give Button',
           'element' => 'a',
           'attributes' => [
-            'class' => 'btn btn-give btn-arrow'
+            'class' => 'btn btn-arrow btn-give'
           ]
         ],
         [
