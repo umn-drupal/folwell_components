@@ -1,0 +1,68 @@
+<?php
+/**
+ * @file
+ * Update hooks for Folwell Paragraphs module.
+ */
+use Symfony\Component\Yaml\Yaml;
+use Drupal\field\Entity\FieldConfig;
+use Drupal\field\Entity\FieldStorageConfig;
+use Drupal\Core\Config\FileStorage;
+
+/**
+ * Update configuration to include Callout paragraphs
+ */
+function folwell_paragraphs_update_8001(&$sandbox) {
+  $module_path = drupal_get_path('module', 'folwell_paragraphs');
+
+  // Create Paragraphs bundle.
+  folwell_paragraphs_read_in_new_config('paragraphs.paragraphs_type.folwell_callout', $module_path);
+
+  // Create field storage & instances.
+  $field_configs = [
+    'field.storage.paragraph.field_fw_callout_image',
+    'field.storage.paragraph.field_fw_callout_style',
+    'field.field.paragraph.folwell_callout.field_fa_accordion_item_header',
+    'field.field.paragraph.folwell_callout.field_fa_text_item_body',
+    'field.field.paragraph.folwell_callout.field_fw_callout_image',
+    'field.field.paragraph.folwell_callout.field_fw_callout_style',
+  ];
+  foreach ($field_configs as $config) {
+    $config_storage = new FileStorage($module_path . '/config/install');
+    $config_record = $config_storage->read($config);
+    $entity_type = \Drupal::service('config.manager')->getEntityTypeIdByName(
+      $config
+    );
+    /** @var \Drupal\Core\Config\Entity\ConfigEntityStorageInterface $storage */
+    $storage = \Drupal::entityTypeManager()->getStorage($entity_type);
+    $entity = $storage->createFromStorageRecord($config_record);
+    $entity->save();
+  }
+
+  // Create Paragraphs bundle form.
+  folwell_paragraphs_read_in_new_config('core.entity_form_display.paragraph.folwell_callout.default', $module_path);
+  // Create Paragraphs bundle view.
+  folwell_paragraphs_read_in_new_config('core.entity_view_display.paragraph.folwell_callout.default', $module_path);
+
+  // Send message to updater.
+  $message = t('The Folwell Callout Paragraphs bundle installed successfully');
+  return $message;
+
+}
+
+/**
+ * Reads in new configuration.
+ * Shamelessly stolen from Bootstrap Paragraphs
+ * (http://drupal.org/project/bootstrap_paragraphs)
+ *
+ * @param string $config_name
+ *   Configuration name.
+ * @param string $module_path
+ *   Base path.
+ */
+function folwell_paragraphs_read_in_new_config($config_name, $module_path) {
+  /** @var \Drupal\Core\Config\StorageInterface $active_storage */
+  $active_storage = \Drupal::service('config.storage');
+  $active_storage->write($config_name, Yaml::parse(
+    file_get_contents($module_path . '/config/install/' . $config_name . '.yml')
+  ));
+}
