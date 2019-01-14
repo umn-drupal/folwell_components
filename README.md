@@ -29,6 +29,8 @@ The Folwell WYSIWYG module provides toolbar buttons that can be added to your te
 
 ## Folwell Paragraphs
 
-Currently, the Folwell Paragraphs module only includes an Accordion component, but more (e.g. image callouts) will be included in future releases. After enabling this module, new paragraph types for Folwell Accordion, Accordion Item, Text with Optional Header, and Table will be available on your site.
+~~Currently, the Folwell Paragraphs module only includes an Accordion component, but more (e.g. image callouts) will be included in future releases.~~ After enabling this module, new paragraph types for Folwell Accordion, Accordion Item, Text with Optional Header, and Table will be available on your site.
 
 To use an accordion on your pages, add a Paragraph field to the appropriate content type that includes the Folwell Accordion paragraph type. When you add a Folwell Accordion paragraph to a node, you can then add Accordion Items to that paragraph. Those have a required header (so you have something to click on to activate the accordion), and you can then add the other paragraph types listed above to the accordion content (including nesting accordions, though that hasn't been extensively tested).
+
+*(Update 1.14.19)* - Added a Folwell Callout paragraph type for image callouts. To use a callout paragraph include it as an option in a paragraph field on your node or custom block. You can select the callout style (three vertical options, a horizontal callout, or an overlay). Callouts will fill the width of their container - they should be used in conjunction with sections in Layout Builder for size/positioning.  
