@@ -1,0 +1,57 @@
+uuid: 6fa23f39-ff56-4641-beda-a43b4d794aa9
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.folwell_callout.field_fa_accordion_item_header
+    - field.field.paragraph.folwell_callout.field_fa_text_item_body
+    - field.field.paragraph.folwell_callout.field_fw_callout_image
+    - field.field.paragraph.folwell_callout.field_fw_callout_style
+    - paragraphs.paragraphs_type.folwell_callout
+  module:
+    - content_moderation
+    - media_library
+    - text
+id: paragraph.folwell_callout.default
+targetEntityType: paragraph
+bundle: folwell_callout
+mode: default
+content:
+  field_fa_accordion_item_header:
+    weight: 2
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: text_textfield
+    region: content
+  field_fa_text_item_body:
+    weight: 3
+    settings:
+      rows: 5
+      placeholder: ''
+    third_party_settings: {  }
+    type: text_textarea
+    region: content
+  field_fw_callout_image:
+    type: media_library_widget
+    weight: 1
+    settings: {  }
+    region: content
+    third_party_settings: {  }
+  field_fw_callout_style:
+    weight: 4
+    settings: {  }
+    third_party_settings: {  }
+    type: options_select
+    region: content
+  moderation_state:
+    type: moderation_state_default
+    weight: 0
+    settings: {  }
+    region: content
+    third_party_settings: {  }
+hidden:
+  created: true
+  status: true
+  uid: true

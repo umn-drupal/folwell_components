@@ -1,0 +1,36 @@
+uuid: 20bfdd0b-8a54-43d7-988e-0e8c2334c61a
+langcode: en
+status: true
+dependencies:
+  module:
+    - options
+    - paragraphs
+id: paragraph.field_fw_callout_style
+field_name: field_fw_callout_style
+entity_type: paragraph
+type: list_string
+settings:
+  allowed_values:
+    -
+      value: callout-background
+      label: 'Lighter Gray'
+    -
+      value: callout-border-all
+      label: 'Gold Border'
+    -
+      value: callout-border-top
+      label: 'Gold Line'
+    -
+      value: callout-horizontal
+      label: Horizontal
+    -
+      value: callout-overlay
+      label: Overlay
+  allowed_values_function: ''
+module: options
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

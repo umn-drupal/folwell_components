@@ -1,0 +1,23 @@
+uuid: e7920a54-d8bb-4cf8-9e04-d50f54050750
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_fw_callout_style
+    - paragraphs.paragraphs_type.folwell_callout
+  module:
+    - options
+id: paragraph.folwell_callout.field_fw_callout_style
+field_name: field_fw_callout_style
+entity_type: paragraph
+bundle: folwell_callout
+label: 'Callout Style'
+description: ''
+required: true
+translatable: false
+default_value:
+  -
+    value: callout-background
+default_value_callback: ''
+settings: {  }
+field_type: list_string
