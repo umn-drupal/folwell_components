@@ -50,6 +50,30 @@ function folwell_paragraphs_update_8001(&$sandbox) {
 }
 
 /**
+ * Update configuration to include image styles and media view modes.
+ */
+function folwell_paragraphs_update_8002(&$sandbox) {
+  $module_path = drupal_get_path('module', 'folwell_paragraphs');
+  $image_styles = [
+    'image.style.folwell_third',
+    'image.style.folwell_half',
+    'image.style.folwell_full',
+    'image.style.folwell_fifth',
+    'core.entity_view_mode.media.folwell_fifth',
+    'core.entity_view_mode.media.folwell_full',
+    'core.entity_view_mode.media.folwell_half',
+    'core.entity_view_mode.media.folwell_third',
+    'core.entity_view_display.media.image.folwell_fifth',
+    'core.entity_view_display.media.image.folwell_full',
+    'core.entity_view_display.media.image.folwell_half',
+    'core.entity_view_display.media.image.folwell_third',
+  ];
+  foreach ($image_styles as $image) {
+    folwell_paragraphs_read_in_new_config($image, $module_path);
+  }
+}
+
+/**
  * Reads in new configuration.
  * Shamelessly stolen from Bootstrap Paragraphs
  * (http://drupal.org/project/bootstrap_paragraphs)
