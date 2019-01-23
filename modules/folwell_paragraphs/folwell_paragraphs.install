@@ -26,17 +26,7 @@ function folwell_paragraphs_update_8001(&$sandbox) {
     'field.field.paragraph.folwell_callout.field_fw_callout_image',
     'field.field.paragraph.folwell_callout.field_fw_callout_style',
   ];
-  foreach ($field_configs as $config) {
-    $config_storage = new FileStorage($module_path . '/config/install');
-    $config_record = $config_storage->read($config);
-    $entity_type = \Drupal::service('config.manager')->getEntityTypeIdByName(
-      $config
-    );
-    /** @var \Drupal\Core\Config\Entity\ConfigEntityStorageInterface $storage */
-    $storage = \Drupal::entityTypeManager()->getStorage($entity_type);
-    $entity = $storage->createFromStorageRecord($config_record);
-    $entity->save();
-  }
+  folwell_paragraphs_add_field_configs($field_configs, $module_path);
 
   // Create Paragraphs bundle form.
   folwell_paragraphs_read_in_new_config('core.entity_form_display.paragraph.folwell_callout.default', $module_path);
@@ -89,4 +79,18 @@ function folwell_paragraphs_read_in_new_config($config_name, $module_path) {
   $active_storage->write($config_name, Yaml::parse(
     file_get_contents($module_path . '/config/install/' . $config_name . '.yml')
   ));
+}
+
+function folwell_paragraphs_add_field_configs($config_list, $module_path) {
+  foreach ($config_list as $config) {
+    $config_storage = new FileStorage($module_path . '/config/install');
+    $config_record = $config_storage->read($config);
+    $entity_type = \Drupal::service('config.manager')->getEntityTypeIdByName(
+      $config
+    );
+    /** @var \Drupal\Core\Config\Entity\ConfigEntityStorageInterface $storage */
+    $storage = \Drupal::entityTypeManager()->getStorage($entity_type);
+    $entity = $storage->createFromStorageRecord($config_record);
+    $entity->save();
+  }
 }
