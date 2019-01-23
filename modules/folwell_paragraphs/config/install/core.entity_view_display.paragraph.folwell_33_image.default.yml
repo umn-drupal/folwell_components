@@ -1,0 +1,22 @@
+uuid: 1af929ed-bf14-4a23-a6fc-5b750c29740c
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.folwell_33_image.field_fw_callout_image
+    - paragraphs.paragraphs_type.folwell_33_image
+id: paragraph.folwell_33_image.default
+targetEntityType: paragraph
+bundle: folwell_33_image
+mode: default
+content:
+  field_fw_callout_image:
+    weight: 0
+    label: hidden
+    settings:
+      view_mode: folwell_third
+      link: false
+    third_party_settings: {  }
+    type: entity_reference_entity_view
+    region: content
+hidden: {  }

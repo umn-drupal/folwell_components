@@ -1,0 +1,9 @@
+uuid: f639b7c8-30bf-4f8e-b1b3-4a284491e28f
+langcode: en
+status: true
+dependencies: {  }
+id: folwell_20_image
+label: 'Folwell 20% Image'
+icon_uuid: null
+description: ''
+behavior_plugins: {  }

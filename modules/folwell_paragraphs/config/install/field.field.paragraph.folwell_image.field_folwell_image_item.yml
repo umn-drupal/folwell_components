@@ -1,0 +1,64 @@
+uuid: 880c7eae-8f13-4014-9e8d-fbe38f23568b
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_folwell_image_item
+    - paragraphs.paragraphs_type.folwell_100_image
+    - paragraphs.paragraphs_type.folwell_20_image
+    - paragraphs.paragraphs_type.folwell_33_image
+    - paragraphs.paragraphs_type.folwell_50_image
+    - paragraphs.paragraphs_type.folwell_image
+  module:
+    - entity_reference_revisions
+id: paragraph.folwell_image.field_folwell_image_item
+field_name: field_folwell_image_item
+entity_type: paragraph
+bundle: folwell_image
+label: 'Folwell Image Item'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:paragraph'
+  handler_settings:
+    negate: 0
+    target_bundles:
+      folwell_100_image: folwell_100_image
+      folwell_20_image: folwell_20_image
+      folwell_33_image: folwell_33_image
+      folwell_50_image: folwell_50_image
+    target_bundles_drag_drop:
+      fa_accordion_item:
+        weight: 11
+        enabled: false
+      fa_table:
+        weight: 12
+        enabled: false
+      fa_text_with_optional_header:
+        weight: 13
+        enabled: false
+      folwell_100_image:
+        enabled: true
+        weight: 14
+      folwell_20_image:
+        enabled: true
+        weight: 15
+      folwell_33_image:
+        enabled: true
+        weight: 16
+      folwell_50_image:
+        enabled: true
+        weight: 17
+      folwell_accordion:
+        weight: 18
+        enabled: false
+      folwell_callout:
+        weight: 19
+        enabled: false
+      folwell_image:
+        weight: 20
+        enabled: false
+field_type: entity_reference_revisions

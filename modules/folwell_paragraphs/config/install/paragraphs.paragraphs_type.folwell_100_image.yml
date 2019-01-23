@@ -1,0 +1,9 @@
+uuid: 420bb71b-f952-456d-bcee-7edbb4faf456
+langcode: en
+status: true
+dependencies: {  }
+id: folwell_100_image
+label: 'Folwell 100% Image'
+icon_uuid: null
+description: ''
+behavior_plugins: {  }

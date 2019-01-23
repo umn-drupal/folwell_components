@@ -1,0 +1,28 @@
+uuid: 423c4810-d887-47d2-abc7-da2a5f52f31c
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_fw_callout_image
+    - media.type.image
+    - paragraphs.paragraphs_type.folwell_33_image
+id: paragraph.folwell_33_image.field_fw_callout_image
+field_name: field_fw_callout_image
+entity_type: paragraph
+bundle: folwell_33_image
+label: Image
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:media'
+  handler_settings:
+    target_bundles:
+      image: image
+    sort:
+      field: _none
+    auto_create: true
+    auto_create_bundle: ''
+field_type: entity_reference
