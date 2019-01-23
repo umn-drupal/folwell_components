@@ -1,0 +1,15 @@
+uuid: 48be17e1-0007-4f0c-8cdd-f11c9991c1e1
+langcode: en
+status: true
+dependencies: {  }
+name: folwell_half
+label: 'Folwell Half Page'
+effects:
+  0ae4c918-2b2c-48f5-bc17-6f9cb15ecad2:
+    uuid: 0ae4c918-2b2c-48f5-bc17-6f9cb15ecad2
+    id: image_scale
+    weight: 1
+    data:
+      width: 544
+      height: null
+      upscale: false

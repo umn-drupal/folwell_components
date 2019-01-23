@@ -1,0 +1,14 @@
+uuid: b62c0466-d14e-4327-a477-71063aac9a7d
+langcode: en
+status: true
+dependencies:
+  module:
+    - lightning_core
+    - media
+third_party_settings:
+  lightning_core:
+    description: ''
+id: media.folwell_full
+label: 'Folwell Full Page Image'
+targetEntityType: media
+cache: true

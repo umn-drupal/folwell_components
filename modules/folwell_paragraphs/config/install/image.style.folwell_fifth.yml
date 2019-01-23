@@ -1,0 +1,15 @@
+uuid: 90ff7245-dd1c-4f15-849f-396582a9702b
+langcode: en
+status: true
+dependencies: {  }
+name: folwell_fifth
+label: 'Folwell Fifth Page'
+effects:
+  ee77446b-10bf-4a62-b9c3-2906c70dedc8:
+    uuid: ee77446b-10bf-4a62-b9c3-2906c70dedc8
+    id: image_scale
+    weight: 1
+    data:
+      width: 196
+      height: null
+      upscale: false

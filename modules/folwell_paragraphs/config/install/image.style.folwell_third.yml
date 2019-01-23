@@ -1,0 +1,15 @@
+uuid: 82f1d337-43d8-4bd5-9e95-ac39fe792118
+langcode: en
+status: true
+dependencies: {  }
+name: folwell_third
+label: 'Folwell Third Page'
+effects:
+  e5eecde0-71f7-4b6d-9b56-9230d78cbf5c:
+    uuid: e5eecde0-71f7-4b6d-9b56-9230d78cbf5c
+    id: image_scale
+    weight: 1
+    data:
+      width: 347
+      height: null
+      upscale: false

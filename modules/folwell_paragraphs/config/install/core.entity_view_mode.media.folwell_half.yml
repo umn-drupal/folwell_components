@@ -1,0 +1,14 @@
+uuid: 2fda3ad4-cdc8-40c7-bf62-1d194adb88fc
+langcode: en
+status: true
+dependencies:
+  module:
+    - lightning_core
+    - media
+third_party_settings:
+  lightning_core:
+    description: ''
+id: media.folwell_half
+label: 'Folwell Half Page Image'
+targetEntityType: media
+cache: true

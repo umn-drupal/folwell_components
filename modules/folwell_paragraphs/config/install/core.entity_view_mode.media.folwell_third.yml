@@ -1,0 +1,14 @@
+uuid: bbeb79f7-9160-4144-b510-f1b68f3b472d
+langcode: en
+status: true
+dependencies:
+  module:
+    - lightning_core
+    - media
+third_party_settings:
+  lightning_core:
+    description: ''
+id: media.folwell_third
+label: 'Folwell Third Page Image'
+targetEntityType: media
+cache: true

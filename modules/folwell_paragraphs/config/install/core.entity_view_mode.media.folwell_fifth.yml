@@ -1,0 +1,14 @@
+uuid: 01d831b0-d744-434d-a6f9-af96bf724de5
+langcode: en
+status: true
+dependencies:
+  module:
+    - lightning_core
+    - media
+third_party_settings:
+  lightning_core:
+    description: ''
+id: media.folwell_fifth
+label: 'Folwell Fifth Page Image'
+targetEntityType: media
+cache: true

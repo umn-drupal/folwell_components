@@ -1,0 +1,34 @@
+uuid: cae92508-bacf-4432-9136-f4f9156c6927
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.media.folwell_half
+    - field.field.media.image.field_media_in_library
+    - field.field.media.image.image
+    - image.style.folwell_half
+    - media.type.image
+  module:
+    - image
+_core:
+  default_config_hash: VLDxfMVPTkd2xvOjFMCh3kWmaOYnd03zggFXuUXQVEY
+id: media.image.folwell_half
+targetEntityType: media
+bundle: image
+mode: folwell_half
+content:
+  image:
+    type: image
+    weight: 0
+    label: hidden
+    settings:
+      image_style: folwell_half
+      image_link: ''
+    third_party_settings: {  }
+    region: content
+hidden:
+  created: true
+  field_media_in_library: true
+  name: true
+  thumbnail: true
+  uid: true

@@ -1,0 +1,15 @@
+uuid: fa43ff3c-035d-44ff-aa54-9fe9d4edfaa7
+langcode: en
+status: true
+dependencies: {  }
+name: folwell_full
+label: 'Folwell Full Page'
+effects:
+  6e081665-0373-45a0-b4b9-b8c66bd19fe2:
+    uuid: 6e081665-0373-45a0-b4b9-b8c66bd19fe2
+    id: image_scale
+    weight: 1
+    data:
+      width: 1160
+      height: null
+      upscale: false
