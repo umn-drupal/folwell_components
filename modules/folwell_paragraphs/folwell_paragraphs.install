@@ -44,11 +44,38 @@ function folwell_paragraphs_update_8001(&$sandbox) {
  */
 function folwell_paragraphs_update_8002(&$sandbox) {
   $module_path = drupal_get_path('module', 'folwell_paragraphs');
-  $image_styles = [
+  $base_configs = [
     'image.style.folwell_third',
     'image.style.folwell_half',
     'image.style.folwell_full',
     'image.style.folwell_fifth',
+    'paragraphs.paragraphs_type.folwell_20_image',
+    'paragraphs.paragraphs_type.folwell_33_image',
+    'paragraphs.paragraphs_type.folwell_50_image',
+    'paragraphs.paragraphs_type.folwell_100_image',
+    'paragraphs.paragraphs_type.folwell_image',
+  ];
+  foreach ($base_configs as $config) {
+    folwell_paragraphs_read_in_new_config($config, $module_path);
+  }
+
+  // Create field storage & instances.
+  $field_configs = [
+    'field.storage.paragraph.field_folwell_image_item',
+    'field.field.paragraph.folwell_20_image.field_fw_callout_image',
+    'field.field.paragraph.folwell_33_image.field_fw_callout_image',
+    'field.field.paragraph.folwell_50_image.field_fw_callout_image',
+    'field.field.paragraph.folwell_100_image.field_fw_callout_image',
+    'field.field.paragraph.folwell_image.field_folwell_image_item',
+  ];
+  folwell_paragraphs_add_field_configs($field_configs, $module_path);
+
+  $display_configs = [
+    'core.entity_form_display.paragraph.folwell_20_image.default',
+    'core.entity_form_display.paragraph.folwell_33_image.default',
+    'core.entity_form_display.paragraph.folwell_50_image.default',
+    'core.entity_form_display.paragraph.folwell_100_image.default',
+    'core.entity_form_display.paragraph.folwell_image.default',
     'core.entity_view_mode.media.folwell_fifth',
     'core.entity_view_mode.media.folwell_full',
     'core.entity_view_mode.media.folwell_half',
@@ -57,10 +84,16 @@ function folwell_paragraphs_update_8002(&$sandbox) {
     'core.entity_view_display.media.image.folwell_full',
     'core.entity_view_display.media.image.folwell_half',
     'core.entity_view_display.media.image.folwell_third',
+    'core.entity_view_display.paragraph.folwell_20_image.default',
+    'core.entity_view_display.paragraph.folwell_33_image.default',
+    'core.entity_view_display.paragraph.folwell_50_image.default',
+    'core.entity_view_display.paragraph.folwell_100_image.default',
+    'core.entity_view_display.paragraph.folwell_image.default',
   ];
-  foreach ($image_styles as $image) {
-    folwell_paragraphs_read_in_new_config($image, $module_path);
+  foreach ($display_configs as $config) {
+    folwell_paragraphs_read_in_new_config($config, $module_path);
   }
+
 }
 
 /**
