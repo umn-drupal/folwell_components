@@ -1,0 +1,9 @@
+{% extends  "paragraph.html.twig" %}
+{% set overlay_attr = create_attribute() %}
+{% block content %}
+    {{ content.field_fw_callout_image }}
+    <aside{{ overlay_attr.addClass(overlay_classes) }}>
+        {{ content.field_fa_accordion_item_header }}
+        {{ content.field_fa_text_item_body }}
+    </aside>
+{% endblock %}
