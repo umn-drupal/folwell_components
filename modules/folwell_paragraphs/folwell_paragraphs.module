@@ -26,6 +26,23 @@ function folwell_paragraphs_theme($existing, $type, $theme, $path) {
     ],
     'paragraph__folwell_overlay' => [
       'base hook' => 'paragraph'
+    ],
+    'paragraph__folwell_slideshow' => [
+      'base hook' => 'paragraph',
+      'template' => 'folwell-slideshow'
+    ],
+    'paragraph__folwell_overlay_slideshow' => [
+      'base hook' => 'paragraph',
+      'template' => 'folwell-slideshow'
+    ],
+    'paragraph__fs_overlay_slide' => [
+      'base hook' => 'paragraph',
+    ],
+    'field__paragraph__field_fa_accordion_item_header__fs_slide' => [
+      'base hook' => 'field'
+    ],
+    'field_group_html_element__group_fs_overlay_container' => [
+      'base hook' => 'field_group_html_element'
     ]
   ];
 }
@@ -33,11 +50,33 @@ function folwell_paragraphs_theme($existing, $type, $theme, $path) {
 function folwell_paragraphs_preprocess_paragraph(&$variables) {
   $paragraph = $variables['paragraph'];
   $type = $paragraph->getType();
-  if ($type == 'folwell_accordion') {
-    $variables['#attached']['library'][] = 'folwell_components/folwell_accordion';
-  } else if ($type == 'folwell_callout') {
-    $variables['#attached']['library'][] = 'folwell_components/fwcallout';
-    $style_field = $variables['content']['field_fw_callout_style']['#items'];
-    $variables['style_class'] = $style_field->get(0)->getString();
+  switch ($type) {
+    case 'folwell_accordion':
+      $variables['#attached']['library'][] = 'folwell_components/folwell_accordion';
+      break;
+
+    case 'folwell_callout':
+      $variables['#attached']['library'][] = 'folwell_components/fwcallout';
+      $style_field = $variables['content']['field_fw_callout_style']['#items'];
+      $variables['style_class'] = $style_field->get(0)->getString();
+      break;
+
+    case 'folwell_overlay_slideshow':
+      $variables['#attached']['library'][] = 'folwell_components/folwell_slider';
+      $variables['#attached']['library'][] = 'folwell_components/fwcallout';
+      break;
+
+    case 'fs_overlay_slide':
+      $position_class = $variables['content']['field_fs_position']['#items']->get(0)->getString();
+      $variables['overlay_classes'] = [
+        'align-' . $position_class,
+        'display-33',
+        'callout-overlay',
+        'bg-gold-light'
+      ];
+
+    default:
+      return;
   }
+
 }

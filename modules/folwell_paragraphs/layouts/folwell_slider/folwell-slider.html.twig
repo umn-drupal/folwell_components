@@ -1,0 +1,33 @@
+{#
+/**
+ * @file
+ * Two-column layout for Folwell Slider.
+ *
+ * Available variables:
+ * - content: The content for this layout.
+ * - attributes: HTML attributes for the layout <div>.
+ *
+ * @ingroup themeable
+ */
+#}
+{%
+    set classes = [
+    'layout',
+    'layout--folwell-slider',
+]
+%}
+{% if content %}
+    <div{{ attributes.addClass(classes) }}>
+        {% if content.left %}
+            <div {{ region_attributes.left.addClass('layout__region', 'layout__region--left') }}>
+                {{ content.left }}
+            </div>
+        {% endif %}
+
+        {% if content.right %}
+            <aside {{ region_attributes.right.addClass('layout__region', 'layout__region--right') }}>
+                {{ content.right }}
+            </aside>
+        {% endif %}
+    </div>
+{% endif %}

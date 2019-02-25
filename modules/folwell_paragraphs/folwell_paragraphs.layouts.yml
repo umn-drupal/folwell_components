@@ -1,0 +1,14 @@
+folwell_slider:
+    label: 'Folwell Slider'
+    path: layouts/folwell_slider
+    template: folwell-slider
+    library: folwell_components/folwell_slider
+    category: 'Folwell'
+    default_region: left
+    icon_map:
+        - [left, right]
+    regions:
+        left:
+            label: Left
+        right:
+            label: Right
