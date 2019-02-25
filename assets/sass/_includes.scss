@@ -1,20 +1,27 @@
-@import 'breakpoint';
+@import "breakpoint";
+$blue: #00f;
 $gold: #fc3;
 $gold-light: #ffde7a;
 $gray-lighter: #f0efee;
 $gray-medium: #777677;
+$gray-dark: #5a5a5a;
 $maroon-light: #900021;
 $white: #fff;
 $callout-break: 50em;
 $accent-border: solid $gold;
-$font-stack-georgia: Georgia, Times, 'Times New Roman', serif;
+$font-stack-georgia: Georgia, Times, "Times New Roman", serif;
 $small-screen: 30em !default;
 
 @mixin accent-border($side: all) {
   @if ($side == all) {
     border: 4px $accent-border;
-  }
-  @else {
+  } @else {
     border-#{$side}: 6px $accent-border;
   }
+}
+
+@mixin font-awesome($font-size: inherit) {
+  font-family: "Font Awesome 5 Free";
+  font-size: $font-size;
+  font-weight: 900;
 }
