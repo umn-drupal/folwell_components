@@ -1,0 +1,69 @@
+uuid: 1cf33317-c0bb-4ccd-a468-048e272d4581
+langcode: en
+status: true
+dependencies:
+  config:
+    - entity_browser.browser.media_browser
+    - field.field.paragraph.fs_slide.field_fa_accordion_item_header
+    - field.field.paragraph.fs_slide.field_fa_text_item_body
+    - field.field.paragraph.fs_slide.field_fs_slide_link
+    - field.field.paragraph.fs_slide.field_fw_callout_image
+    - paragraphs.paragraphs_type.fs_slide
+  module:
+    - content_moderation
+    - entity_browser
+    - link
+    - text
+id: paragraph.fs_slide.default
+targetEntityType: paragraph
+bundle: fs_slide
+mode: default
+content:
+  field_fa_accordion_item_header:
+    weight: 2
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: text_textfield
+    region: content
+  field_fa_text_item_body:
+    weight: 3
+    settings:
+      rows: 5
+      placeholder: ''
+    third_party_settings: {  }
+    type: text_textarea
+    region: content
+  field_fs_slide_link:
+    weight: 4
+    settings:
+      placeholder_url: ''
+      placeholder_title: ''
+    third_party_settings: {  }
+    type: link_default
+    region: content
+  field_fw_callout_image:
+    type: entity_browser_entity_reference
+    weight: 1
+    settings:
+      entity_browser: media_browser
+      field_widget_display: rendered_entity
+      field_widget_edit: true
+      field_widget_remove: true
+      selection_mode: selection_append
+      field_widget_display_settings:
+        view_mode: thumbnail
+      open: true
+    region: content
+    third_party_settings: {  }
+  moderation_state:
+    type: moderation_state_default
+    weight: 0
+    settings: {  }
+    region: content
+    third_party_settings: {  }
+hidden:
+  created: true
+  status: true
+  uid: true

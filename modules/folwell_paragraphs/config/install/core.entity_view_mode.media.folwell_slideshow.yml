@@ -1,0 +1,14 @@
+uuid: 0f7a075c-f570-4731-b275-6fdcc6adc5fe
+langcode: en
+status: true
+dependencies:
+  module:
+    - lightning_core
+    - media
+third_party_settings:
+  lightning_core:
+    description: ''
+id: media.folwell_slideshow
+label: 'Folwell Slideshow'
+targetEntityType: media
+cache: true

@@ -1,0 +1,9 @@
+uuid: 07564521-ef2e-4233-abe0-73ad2fa61181
+langcode: en
+status: true
+dependencies: {  }
+id: folwell_overlay_slideshow
+label: 'Folwell Overlay Slideshow'
+icon_uuid: null
+description: ''
+behavior_plugins: {  }

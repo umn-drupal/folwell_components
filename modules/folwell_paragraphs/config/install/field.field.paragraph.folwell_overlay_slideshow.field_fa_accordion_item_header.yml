@@ -1,0 +1,21 @@
+uuid: 3b4bba9b-22b5-48c5-9391-3a7166cebbe7
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_fa_accordion_item_header
+    - paragraphs.paragraphs_type.folwell_overlay_slideshow
+  module:
+    - text
+id: paragraph.folwell_overlay_slideshow.field_fa_accordion_item_header
+field_name: field_fa_accordion_item_header
+entity_type: paragraph
+bundle: folwell_overlay_slideshow
+label: 'Slideshow Header'
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: text

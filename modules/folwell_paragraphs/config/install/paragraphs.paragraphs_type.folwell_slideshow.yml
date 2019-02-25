@@ -1,0 +1,9 @@
+uuid: 9b45812a-f0a1-4b57-a0f2-a8bc758a12d3
+langcode: en
+status: true
+dependencies: {  }
+id: folwell_slideshow
+label: 'Folwell Slideshow'
+icon_uuid: null
+description: ''
+behavior_plugins: {  }

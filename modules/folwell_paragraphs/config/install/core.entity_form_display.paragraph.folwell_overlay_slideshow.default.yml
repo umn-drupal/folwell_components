@@ -1,0 +1,47 @@
+uuid: dc0fca33-a9d6-4de7-a8c3-4d504b8383ac
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.folwell_overlay_slideshow.field_fa_accordion_item_header
+    - field.field.paragraph.folwell_overlay_slideshow.field_fs_slide_item
+    - paragraphs.paragraphs_type.folwell_overlay_slideshow
+  module:
+    - content_moderation
+    - paragraphs
+    - text
+id: paragraph.folwell_overlay_slideshow.default
+targetEntityType: paragraph
+bundle: folwell_overlay_slideshow
+mode: default
+content:
+  field_fa_accordion_item_header:
+    weight: 1
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: text_textfield
+    region: content
+  field_fs_slide_item:
+    weight: 2
+    settings:
+      title: Paragraph
+      title_plural: Paragraphs
+      edit_mode: open
+      add_mode: dropdown
+      form_display_mode: default
+      default_paragraph_type: fs_overlay_slide
+    third_party_settings: {  }
+    type: entity_reference_paragraphs
+    region: content
+  moderation_state:
+    type: moderation_state_default
+    weight: 0
+    settings: {  }
+    region: content
+    third_party_settings: {  }
+hidden:
+  created: true
+  status: true
+  uid: true

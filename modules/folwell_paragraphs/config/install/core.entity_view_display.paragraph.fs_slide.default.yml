@@ -1,0 +1,139 @@
+uuid: 941c3065-91e5-4c88-a1e9-d30a4787a657
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.fs_slide.field_fa_accordion_item_header
+    - field.field.paragraph.fs_slide.field_fa_text_item_body
+    - field.field.paragraph.fs_slide.field_fs_slide_link
+    - field.field.paragraph.fs_slide.field_fw_callout_image
+    - paragraphs.paragraphs_type.fs_slide
+  module:
+    - folwell_components
+    - folwell_paragraphs
+    - layout_builder
+    - layout_builder_restrictions
+    - link
+    - text
+third_party_settings:
+  layout_builder:
+    sections:
+      -
+        layout_id: folwell_slider
+        layout_settings: {  }
+        components:
+          b8751c9d-5584-4fd2-9ada-deed16999e39:
+            uuid: b8751c9d-5584-4fd2-9ada-deed16999e39
+            region: left
+            configuration:
+              id: 'field_block:paragraph:fs_slide:field_fw_callout_image'
+              label: 'Slide Media'
+              provider: layout_builder
+              label_display: '0'
+              formatter:
+                label: hidden
+                type: entity_reference_entity_view
+                settings:
+                  view_mode: folwell_slideshow
+                third_party_settings: {  }
+              context_mapping:
+                entity: layout_builder.entity
+            additional: {  }
+            weight: 0
+          62ef9925-a578-4223-a99f-5fa5b0790507:
+            uuid: 62ef9925-a578-4223-a99f-5fa5b0790507
+            region: right
+            configuration:
+              label_display: '0'
+              context_mapping:
+                entity: layout_builder.entity
+              id: 'field_block:paragraph:fs_slide:field_fa_text_item_body'
+              formatter:
+                label: hidden
+                settings: {  }
+                third_party_settings: {  }
+                type: text_default
+            additional: {  }
+            weight: 4
+          34c69a26-dc79-4f5b-9f67-4d88b0105f8f:
+            uuid: 34c69a26-dc79-4f5b-9f67-4d88b0105f8f
+            region: right
+            configuration:
+              id: 'field_block:paragraph:fs_slide:field_fa_accordion_item_header'
+              label: 'Slide Header'
+              provider: layout_builder
+              label_display: '0'
+              formatter:
+                label: hidden
+                type: text_default
+                settings: {  }
+                third_party_settings: {  }
+              context_mapping:
+                entity: layout_builder.entity
+            additional: {  }
+            weight: 3
+    allow_custom: false
+    enabled: true
+  layout_builder_restrictions:
+    allowed_blocks:
+      'Chaos tools': {  }
+      core: {  }
+      Devel: {  }
+      'Entity Block': {  }
+      Forms: {  }
+      Help: {  }
+      'Inline blocks': {  }
+      'Lists (Views)': {  }
+      Menus: {  }
+      Paragraph: {  }
+      'Paragraph fields':
+        - 'field_block:paragraph:fs_slide:field_fa_text_item_body'
+        - 'field_block:paragraph:fs_slide:field_fa_accordion_item_header'
+        - 'field_block:paragraph:fs_slide:field_fw_callout_image'
+      Superfish: {  }
+      System: {  }
+      'UMN Search Form Configuration': {  }
+      User: {  }
+      'User fields': {  }
+    allowed_layouts: {  }
+id: paragraph.fs_slide.default
+targetEntityType: paragraph
+bundle: fs_slide
+mode: default
+content:
+  field_fa_accordion_item_header:
+    weight: 1
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    type: text_default
+    region: content
+  field_fa_text_item_body:
+    weight: 2
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    type: text_default
+    region: content
+  field_fs_slide_link:
+    weight: 3
+    label: hidden
+    settings:
+      trim_length: 80
+      url_only: false
+      url_plain: false
+      rel: ''
+      target: ''
+    third_party_settings: {  }
+    type: link
+    region: content
+  field_fw_callout_image:
+    weight: 0
+    label: hidden
+    settings:
+      view_mode: default
+      link: false
+    third_party_settings: {  }
+    type: entity_reference_entity_view
+    region: content
+hidden: {  }

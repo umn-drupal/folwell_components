@@ -1,0 +1,53 @@
+uuid: f5881710-bb84-4b16-b4c0-886edb112616
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.folwell_overlay_slideshow.field_fa_accordion_item_header
+    - field.field.paragraph.folwell_overlay_slideshow.field_fs_slide_item
+    - paragraphs.paragraphs_type.folwell_overlay_slideshow
+  module:
+    - layout_builder
+    - slick_paragraphs
+    - text
+third_party_settings:
+  layout_builder:
+    sections: {  }
+id: paragraph.folwell_overlay_slideshow.default
+targetEntityType: paragraph
+bundle: folwell_overlay_slideshow
+mode: default
+content:
+  field_fa_accordion_item_header:
+    weight: 0
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    type: text_default
+    region: content
+  field_fs_slide_item:
+    weight: 1
+    label: hidden
+    settings:
+      optionset: folwell_slideshow
+      skin: default
+      view_mode: default
+      cache: 0
+      current_view_mode: default
+      override: false
+      overridables:
+        arrows: '0'
+        autoplay: '0'
+        dots: '0'
+        draggable: '0'
+        infinite: '0'
+        mouseWheel: '0'
+        randomize: '0'
+        variableWidth: '0'
+      skin_arrows: ''
+      skin_dots: ''
+      style: ''
+    third_party_settings: {  }
+    type: slick_paragraphs_vanilla
+    region: content
+hidden: {  }

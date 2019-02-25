@@ -1,0 +1,28 @@
+uuid: 956dc924-a9f8-430a-9254-b2daf81eaf7d
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_fw_callout_image
+    - media.type.image
+    - paragraphs.paragraphs_type.fs_overlay_slide
+id: paragraph.fs_overlay_slide.field_fw_callout_image
+field_name: field_fw_callout_image
+entity_type: paragraph
+bundle: fs_overlay_slide
+label: 'Slide Image'
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:media'
+  handler_settings:
+    target_bundles:
+      image: image
+    sort:
+      field: _none
+    auto_create: true
+    auto_create_bundle: image
+field_type: entity_reference

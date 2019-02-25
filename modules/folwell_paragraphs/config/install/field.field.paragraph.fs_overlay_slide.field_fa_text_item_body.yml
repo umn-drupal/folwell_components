@@ -1,0 +1,21 @@
+uuid: 6567a424-ba9a-4e42-9c57-584d9c6f9742
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_fa_text_item_body
+    - paragraphs.paragraphs_type.fs_overlay_slide
+  module:
+    - text
+id: paragraph.fs_overlay_slide.field_fa_text_item_body
+field_name: field_fa_text_item_body
+entity_type: paragraph
+bundle: fs_overlay_slide
+label: 'Overlay Content'
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: text_long

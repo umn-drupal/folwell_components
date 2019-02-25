@@ -1,0 +1,19 @@
+uuid: 8ebb0820-c2a1-40aa-a53c-5e0adc12e188
+langcode: en
+status: true
+dependencies:
+  module:
+    - link
+    - paragraphs
+id: paragraph.field_fs_slide_link
+field_name: field_fs_slide_link
+entity_type: paragraph
+type: link
+settings: {  }
+module: link
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

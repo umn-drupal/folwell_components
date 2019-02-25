@@ -1,0 +1,21 @@
+uuid: 216d2778-5e4d-4565-a158-7d848d2020e4
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_fa_accordion_item_header
+    - paragraphs.paragraphs_type.fs_slide
+  module:
+    - text
+id: paragraph.fs_slide.field_fa_accordion_item_header
+field_name: field_fa_accordion_item_header
+entity_type: paragraph
+bundle: fs_slide
+label: 'Slide Header'
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: text

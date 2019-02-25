@@ -1,0 +1,9 @@
+uuid: 6272c05c-ccfa-4b83-a8ba-4828f962c0b4
+langcode: en
+status: true
+dependencies: {  }
+id: fs_overlay_slide
+label: 'Overlay Slide'
+icon_uuid: null
+description: ''
+behavior_plugins: {  }

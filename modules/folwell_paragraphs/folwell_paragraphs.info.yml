@@ -7,3 +7,5 @@ dependencies:
     - folwell_components
     - tablefield
     - paragraphs
+    - slick_paragraphs
+    - slick_media

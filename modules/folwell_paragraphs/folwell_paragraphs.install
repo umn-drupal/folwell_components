@@ -97,6 +97,71 @@ function folwell_paragraphs_update_8002(&$sandbox) {
 }
 
 /**
+ * Ensure slick submodules are installed. Update configuration to include
+ * slideshow paragraphs and settings.
+ */
+function folwell_paragraphs_update_8003(&$sandbox) {
+  // Ensure Slick Paragraphs and Slick Media are enabled.
+  $module_handler = \Drupal::service('module_handler');
+  $module_installer = \Drupal::service('module_installer');
+  foreach (['slick_paragraphs', 'slick_media'] as $module) {
+    if (!$module_handler->moduleExists($module)) {
+      $module_installer->install([$module]);
+    }
+  }
+
+  // Configs.
+  $module_path = drupal_get_path('module', 'folwell_paragraphs');
+  $base_configs = [
+    'slick.optionset.folwell_slideshow',
+    'image.style.folwell_slideshow',
+    'paragraphs.paragraphs_type.folwell_overlay_slideshow',
+    'paragraphs.paragraphs_type.folwell_slideshow',
+    'paragraphs.paragraphs_type.fs_overlay_slide',
+    'paragraphs.paragraphs_type.fs_slide',
+  ];
+  foreach ($base_configs as $config) {
+    folwell_paragraphs_read_in_new_config($config, $module_path);
+  }
+
+  // Create field storage & instances.
+  $field_configs = [
+    'field.storage.paragraph.field_fs_position',
+    'field.storage.paragraph.field_fs_slide_item',
+    'field.storage.paragraph.field_fs_slide_link',
+    'field.field.paragraph.folwell_overlay_slideshow.field_fa_accordion_item_header',
+    'field.field.paragraph.folwell_overlay_slideshow.field_fs_slide_item',
+    'field.field.paragraph.folwell_slideshow.field_fa_accordion_item_header',
+    'field.field.paragraph.folwell_slideshow.field_fs_slide_item',
+    'field.field.paragraph.fs_overlay_slide.field_fa_accordion_item_header',
+    'field.field.paragraph.fs_overlay_slide.field_fa_text_item_body',
+    'field.field.paragraph.fs_overlay_slide.field_fs_position',
+    'field.field.paragraph.fs_overlay_slide.field_fw_callout_image',
+    'field.field.paragraph.fs_slide.field_fa_accordion_item_header',
+    'field.field.paragraph.fs_slide.field_fa_text_item_body',
+    'field.field.paragraph.fs_slide.field_fs_slide_link',
+    'field.field.paragraph.fs_slide.field_fw_callout_image',
+  ];
+  folwell_paragraphs_add_field_configs($field_configs, $module_path);
+
+  $display_configs = [
+    'core.entity_form_display.paragraph.folwell_overlay_slideshow.default',
+    'core.entity_form_display.paragraph.folwell_slideshow.default',
+    'core.entity_form_display.paragraph.fs_overlay_slide.default',
+    'core.entity_form_display.paragraph.fs_slide.default',
+    'core.entity_view_mode.media.folwell_slideshow',
+    'core.entity_view_display.media.image.folwell_slideshow',
+    'core.entity_view_display.paragraph.folwell_overlay_slideshow.default',
+    'core.entity_view_display.paragraph.folwell_slideshow.default',
+    'core.entity_view_display.paragraph.fs_overlay_slide.default',
+    'core.entity_view_display.paragraph.fs_slide.default',
+  ];
+  foreach ($display_configs as $config) {
+    folwell_paragraphs_read_in_new_config($config, $module_path);
+  }
+}
+
+/**
  * Reads in new configuration.
  * Shamelessly stolen from Bootstrap Paragraphs
  * (http://drupal.org/project/bootstrap_paragraphs)

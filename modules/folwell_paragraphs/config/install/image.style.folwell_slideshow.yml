@@ -1,0 +1,15 @@
+uuid: f4d20b2f-9e8e-4cf4-8a6a-2f86b31f0a07
+langcode: en
+status: true
+dependencies: {  }
+name: folwell_slideshow
+label: 'Folwell Slideshow'
+effects:
+  9c143a07-30e5-4bc8-82f5-234db8fa4970:
+    uuid: 9c143a07-30e5-4bc8-82f5-234db8fa4970
+    id: image_scale
+    weight: 1
+    data:
+      width: 720
+      height: null
+      upscale: false

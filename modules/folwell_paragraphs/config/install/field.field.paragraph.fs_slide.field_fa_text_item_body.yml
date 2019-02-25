@@ -1,0 +1,21 @@
+uuid: d0c83fa1-a897-4182-a66c-793b60d617aa
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_fa_text_item_body
+    - paragraphs.paragraphs_type.fs_slide
+  module:
+    - text
+id: paragraph.fs_slide.field_fa_text_item_body
+field_name: field_fa_text_item_body
+entity_type: paragraph
+bundle: fs_slide
+label: 'Slide Content'
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: text_long
