@@ -1,5 +1,5 @@
 //Pullquote and Blockquote: Folwell Theme Component
-@import 'includes';
+@import "includes";
 
 aside.pullquote {
   border-style: solid;
@@ -19,7 +19,7 @@ aside.pullquote {
   &:before {
     background: $white;
     color: $gold;
-    content: '\201C';
+    content: "\201C";
     font-family: $font-stack-georgia;
     font-size: 5em;
     height: 4rem;
