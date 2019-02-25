@@ -169,9 +169,9 @@
   @include breakpoint(max-width $callout-break) {
     position: relative;
     top: 0;
-    width: 100% !important;
-    left: 0;
-    margin-bottom: 1em !important;
+    width: 100%;
+    //left: 0;
+    margin-bottom: 1em;
   }
 }
 
