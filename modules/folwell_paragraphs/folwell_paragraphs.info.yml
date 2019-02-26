@@ -9,3 +9,5 @@ dependencies:
     - paragraphs
     - slick_paragraphs
     - slick_media
+    - lightning_media
+    - layout_builder
