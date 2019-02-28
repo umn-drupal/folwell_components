@@ -1,7 +1,7 @@
 name: Folwell Paragraphs
 description: Paragraph types to accompany Folwell theme
 core: 8.x
-package: Custom
+package: Folwell
 type: module
 dependencies:
     - folwell_components
