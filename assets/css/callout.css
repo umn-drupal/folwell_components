@@ -58,4 +58,6 @@
 
 .callout-image + .callout { margin-top: 0; }
 
+.paragraph--type--folwell-callout { position: relative; }
+
 /*# sourceMappingURL=maps/callout.css.map */
