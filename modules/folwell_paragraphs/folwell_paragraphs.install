@@ -7,6 +7,7 @@ use Symfony\Component\Yaml\Yaml;
 use Drupal\field\Entity\FieldConfig;
 use Drupal\field\Entity\FieldStorageConfig;
 use Drupal\Core\Config\FileStorage;
+use Drupal\image\Entity\ImageStyle;
 
 /**
  * Update configuration to include Callout paragraphs
@@ -165,6 +166,33 @@ function folwell_paragraphs_update_8003(&$sandbox) {
   foreach ($display_configs as $config) {
     folwell_paragraphs_read_in_new_config($config, $module_path);
   }
+}
+
+/**
+ * Adjust image style widths to allow for placement outside main container region.
+ */
+function folwell_paragraphs_update_8004(&$sandbox) {
+  $image_configs = [
+    'image.style.folwell_third',
+    'image.style.folwell_half',
+    'image.style.folwell_full',
+    'image.style.folwell_fifth',
+  ];
+  $config_factory = \Drupal::configFactory();
+  $module_path = drupal_get_path('module', 'folwell_paragraphs');
+  $config_storage = new FileStorage($module_path . '/config/install');
+  foreach ($image_configs as $config) {
+    // Save changes to config.
+    $editable = $config_factory->getEditable($config);
+    $new_config = $config_storage->read($config);
+    $editable->setData($new_config);
+    $editable->save();
+
+    // Flush cached images of changed styles.
+    $style = ImageStyle::load($editable->get('name'));
+    $style->flush();
+  }
+
 }
 
 /**
