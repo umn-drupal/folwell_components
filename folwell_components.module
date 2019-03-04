@@ -90,6 +90,20 @@ function folwell_components_editor_js_settings_alter(array &$settings) {
           'widget' => 'drupalentity',
           'name' => 'Circle Image',
           'attributes' => ['class' => 'img-circle']
+        ],
+        [
+          'name' => 'Photo Credit',
+          'element' => 'p',
+          'attributes' => [
+            'class' => 'photo-credit'
+          ]
+        ],
+        [
+          'name' => 'Intro Text',
+          'element' => 'p',
+          'attributes' => [
+            'class' => 'txt-intro'
+          ]
         ]
       ];
       $settings['editor']['formats']['rich_text']['editorSettings']['stylesSet'] =
