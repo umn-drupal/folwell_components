@@ -16,6 +16,8 @@ The main Folwell Components module includes CSS/JavaScript for Folwell Accordion
 - 20% Image
 - Full-width Image
 - Circle Image
+- Photo Credit
+- Intro Text
 
 _Note: to make use of the styles dropdown in CKEditor, the following setting for "Allowed HTML tags" in the Rich Text format is recommended:_
 
@@ -38,3 +40,5 @@ _(Update 1.14.19)_ - Added a Folwell Callout paragraph type for image callouts. 
 _(Update 2.26.19)_ - Added paragraph types for Folwell Slideshow and Folwell Overlay Slideshow. To use one of these slideshow types, include it as an option in a paragraph field on your node or custom block. Slideshows are intended to be used with landscape-oriented images - full container width in the case of Overlay slides (appearance is similar to the Overlay Callout style), and regular slideshows images will be 60% width of the container.
 
 With this update, the Folwell Paragraphs module requires Layout Builder, and that module (as well as Slick slideshows) will be enabled upon install.
+
+_(Update 3.05.19)_ - Update Folwell Image paragraph type to include caption and photo credit fields.
