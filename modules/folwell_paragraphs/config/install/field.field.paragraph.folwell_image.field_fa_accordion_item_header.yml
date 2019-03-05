@@ -1,0 +1,21 @@
+uuid: d536f071-adac-4935-b26e-b272674c4fb1
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_fa_accordion_item_header
+    - paragraphs.paragraphs_type.folwell_image
+  module:
+    - text
+id: paragraph.folwell_image.field_fa_accordion_item_header
+field_name: field_fa_accordion_item_header
+entity_type: paragraph
+bundle: folwell_image
+label: 'Photo Credit'
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: text

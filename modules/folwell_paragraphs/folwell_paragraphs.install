@@ -196,6 +196,30 @@ function folwell_paragraphs_update_8004(&$sandbox) {
 }
 
 /**
+ * Update Folwell Image paragraph configs with additional fields.
+ */
+function folwell_paragraphs_update_8005(&$sandbox) {
+  $module_path = drupal_get_path('module', 'folwell_paragraphs');
+  $field_configs = [
+    'field.field.paragraph.folwell_image.field_fa_text_item_body',
+    'field.field.paragraph.folwell_image.field_fa_accordion_item_header',
+  ];
+  folwell_paragraphs_add_field_configs($field_configs, $module_path);
+  $display_configs = [
+    'core.entity_view_display.paragraph.folwell_image.default',
+    'core.entity_form_display.paragraph.folwell_image.default',
+  ];
+  $config_factory = \Drupal::configFactory();
+  $config_storage = new FileStorage($module_path . '/config/install');
+  foreach ($display_configs as $config) {
+    $editable = $config_factory->getEditable($config);
+    $new_config = $config_storage->read($config);
+    $editable->setData($new_config);
+    $editable->save();
+  }
+}
+
+/**
  * Reads in new configuration.
  * Shamelessly stolen from Bootstrap Paragraphs
  * (http://drupal.org/project/bootstrap_paragraphs)

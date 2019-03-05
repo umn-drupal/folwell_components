@@ -41,8 +41,8 @@ function folwell_paragraphs_theme($existing, $type, $theme, $path) {
     'field__paragraph__field_fa_accordion_item_header__fs_slide' => [
       'base hook' => 'field'
     ],
-    'field_group_html_element__group_fs_overlay_container' => [
-      'base hook' => 'field_group_html_element'
+    'paragraph__folwell_image' => [
+      'base hook' => 'paragraph',
     ]
   ];
 }
@@ -74,6 +74,19 @@ function folwell_paragraphs_preprocess_paragraph(&$variables) {
         'callout-overlay',
         'bg-gold-light'
       ];
+      break;
+
+    case 'folwell_image':
+      $image_paragraph = $paragraph->get('field_folwell_image_item')->get(0)->view();
+      $display_type = $image_paragraph['#paragraph']->getType();
+      $class_map = [
+        'folwell_20_image' => 'display-20',
+        'folwell_33_image' => 'display-33',
+        'folwell_50_image' => 'display-50',
+        'folwell_100_image' => 'display-100',
+      ];
+      $variables['display_class'] = $class_map[$display_type];
+      break;
 
     default:
       return;

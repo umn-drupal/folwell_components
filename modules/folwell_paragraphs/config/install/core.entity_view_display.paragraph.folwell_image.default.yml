@@ -3,15 +3,36 @@ langcode: en
 status: true
 dependencies:
   config:
+    - field.field.paragraph.folwell_image.field_fa_accordion_item_header
+    - field.field.paragraph.folwell_image.field_fa_text_item_body
     - field.field.paragraph.folwell_image.field_folwell_image_item
     - paragraphs.paragraphs_type.folwell_image
   module:
     - entity_reference_revisions
+    - layout_builder
+    - text
+third_party_settings:
+  layout_builder:
+    sections: {  }
 id: paragraph.folwell_image.default
 targetEntityType: paragraph
 bundle: folwell_image
 mode: default
 content:
+  field_fa_accordion_item_header:
+    weight: 3
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    type: text_default
+    region: content
+  field_fa_text_item_body:
+    weight: 2
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    type: text_default
+    region: content
   field_folwell_image_item:
     type: entity_reference_revisions_entity_view
     weight: 1

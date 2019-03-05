@@ -1,0 +1,21 @@
+uuid: b4004333-194f-49df-bfef-fd9a76eb12c0
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_fa_text_item_body
+    - paragraphs.paragraphs_type.folwell_image
+  module:
+    - text
+id: paragraph.folwell_image.field_fa_text_item_body
+field_name: field_fa_text_item_body
+entity_type: paragraph
+bundle: folwell_image
+label: 'Image Caption'
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: text_long
