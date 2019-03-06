@@ -209,14 +209,40 @@ function folwell_paragraphs_update_8005(&$sandbox) {
     'core.entity_view_display.paragraph.folwell_image.default',
     'core.entity_form_display.paragraph.folwell_image.default',
   ];
-  $config_factory = \Drupal::configFactory();
-  $config_storage = new FileStorage($module_path . '/config/install');
-  foreach ($display_configs as $config) {
-    $editable = $config_factory->getEditable($config);
-    $new_config = $config_storage->read($config);
-    $editable->setData($new_config);
-    $editable->save();
+  folwell_paragraphs_edit_configs($display_configs, $module_path);
+}
+
+/**
+ * Remove Header field from slide and callout paragraph types.
+ */
+function folwell_paragraphs_update_8006(&$sandbox) {
+  $module_path = drupal_get_path('module', 'folwell_paragraphs');
+  $bundles = [
+    'fs_slide',
+    'fs_overlay_slide',
+    'folwell_callout'
+  ];
+
+  foreach ($bundles as $bundle) {
+    $field = FieldConfig::loadByName(
+      'paragraph',
+      $bundle,
+      'field_fa_accordion_item_header'
+    );
+    if (!empty($field)) {
+      $field->delete();
+    }
   }
+
+  $display_configs = [
+    'core.entity_form_display.paragraph.folwell_callout.default',
+    'core.entity_form_display.paragraph.fs_overlay_slide.default',
+    'core.entity_form_display.paragraph.fs_slide.default',
+    'core.entity_view_display.paragraph.folwell_callout.default',
+    'core.entity_view_display.paragraph.fs_overlay_slide.default',
+    'core.entity_view_display.paragraph.fs_slide.default',
+  ];
+  folwell_paragraphs_edit_configs($display_configs, $module_path);
 }
 
 /**
@@ -248,5 +274,16 @@ function folwell_paragraphs_add_field_configs($config_list, $module_path) {
     $storage = \Drupal::entityTypeManager()->getStorage($entity_type);
     $entity = $storage->createFromStorageRecord($config_record);
     $entity->save();
+  }
+}
+
+function folwell_paragraphs_edit_configs($config_list, $module_path) {
+  $config_factory = \Drupal::configFactory();
+  $config_storage = new FileStorage($module_path . '/config/install');
+  foreach ($config_list as $config) {
+    $editable = $config_factory->getEditable($config);
+    $new_config = $config_storage->read($config);
+    $editable->setData($new_config);
+    $editable->save();
   }
 }

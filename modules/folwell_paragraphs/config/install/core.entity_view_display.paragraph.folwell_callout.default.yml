@@ -3,7 +3,6 @@ langcode: en
 status: true
 dependencies:
   config:
-    - field.field.paragraph.folwell_callout.field_fa_accordion_item_header
     - field.field.paragraph.folwell_callout.field_fa_text_item_body
     - field.field.paragraph.folwell_callout.field_fw_callout_image
     - field.field.paragraph.folwell_callout.field_fw_callout_style
@@ -11,18 +10,13 @@ dependencies:
   module:
     - options
     - text
+_core:
+  default_config_hash: wNcaJvBAbPFNZSGtsNuNfjcsnzL5nuBeMhK9xl_rf00
 id: paragraph.folwell_callout.default
 targetEntityType: paragraph
 bundle: folwell_callout
 mode: default
 content:
-  field_fa_accordion_item_header:
-    weight: 1
-    label: hidden
-    settings: {  }
-    third_party_settings: {  }
-    type: text_default
-    region: content
   field_fa_text_item_body:
     weight: 2
     label: hidden

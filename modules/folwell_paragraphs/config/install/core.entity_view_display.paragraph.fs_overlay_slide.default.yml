@@ -3,7 +3,6 @@ langcode: en
 status: true
 dependencies:
   config:
-    - field.field.paragraph.fs_overlay_slide.field_fa_accordion_item_header
     - field.field.paragraph.fs_overlay_slide.field_fa_text_item_body
     - field.field.paragraph.fs_overlay_slide.field_fs_position
     - field.field.paragraph.fs_overlay_slide.field_fw_callout_image
@@ -20,13 +19,6 @@ targetEntityType: paragraph
 bundle: fs_overlay_slide
 mode: default
 content:
-  field_fa_accordion_item_header:
-    weight: 2
-    label: hidden
-    settings: {  }
-    third_party_settings: {  }
-    type: text_default
-    region: content
   field_fa_text_item_body:
     weight: 3
     label: hidden

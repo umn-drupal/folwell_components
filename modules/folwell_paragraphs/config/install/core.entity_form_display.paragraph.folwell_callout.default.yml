@@ -3,7 +3,6 @@ langcode: en
 status: true
 dependencies:
   config:
-    - field.field.paragraph.folwell_callout.field_fa_accordion_item_header
     - field.field.paragraph.folwell_callout.field_fa_text_item_body
     - field.field.paragraph.folwell_callout.field_fw_callout_image
     - field.field.paragraph.folwell_callout.field_fw_callout_style
@@ -12,19 +11,13 @@ dependencies:
     - content_moderation
     - media_library
     - text
+_core:
+  default_config_hash: Qecs4PTrB-HylJrl8VHrgU8oZyETN87fW4PGtA3cpIw
 id: paragraph.folwell_callout.default
 targetEntityType: paragraph
 bundle: folwell_callout
 mode: default
 content:
-  field_fa_accordion_item_header:
-    weight: 2
-    settings:
-      size: 60
-      placeholder: ''
-    third_party_settings: {  }
-    type: text_textfield
-    region: content
   field_fa_text_item_body:
     weight: 3
     settings:
