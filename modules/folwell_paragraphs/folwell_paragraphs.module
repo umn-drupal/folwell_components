@@ -57,7 +57,7 @@ function folwell_paragraphs_preprocess_paragraph(&$variables) {
 
     case 'folwell_callout':
       $variables['#attached']['library'][] = 'folwell_components/fwcallout';
-      $style_field = $variables['content']['field_fw_callout_style']['#items'];
+      $style_field = $paragraph->get('field_fw_callout_style');
       $variables['style_class'] = $style_field->get(0)->getString();
       break;
 
@@ -67,7 +67,8 @@ function folwell_paragraphs_preprocess_paragraph(&$variables) {
       break;
 
     case 'fs_overlay_slide':
-      $position_class = $variables['content']['field_fs_position']['#items']->get(0)->getString();
+      $position_field = $paragraph->get('field_fs_position');
+      $position_class = $position_field->get(0)->getString();
       $variables['overlay_classes'] = [
         'align-' . $position_class,
         'display-33',
