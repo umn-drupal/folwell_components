@@ -49,20 +49,20 @@
             this.setData("style", "callout-border-left");
           }
           if (this.element.hasClass("display-100")) {
-            this.setData("style", "display-100");
+            this.setData("width", "display-100");
           } else if (this.element.hasClass("display-50")) {
-            this.setData("style", "display-50");
+            this.setData("width", "display-50");
           } else if (this.element.hasClass("display-33")) {
-            this.setData("style", "display-33");
+            this.setData("width", "display-33");
           } else if (this.element.hasClass("display-25")) {
-            this.setData("style", "display-25");
+            this.setData("width", "display-25");
           }
           if (this.element.hasClass("align-none")) {
-            this.setData("style", "align-none");
+            this.setData("align", "align-none");
           } else if (this.element.hasClass("align-right")) {
-            this.setData("style", "align-right");
+            this.setData("align", "align-right");
           } else if (this.element.hasClass("align-left")) {
-            this.setData("style", "align-left");
+            this.setData("align", "align-left");
           }
         },
         data: function() {
