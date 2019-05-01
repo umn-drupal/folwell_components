@@ -1,0 +1,8 @@
+uuid: 35de6004-9608-4f4f-8e4a-3ee5a7c161a1
+langcode: en
+status: true
+dependencies: {  }
+id: folwell_component
+label: 'Folwell Component'
+revision: 1
+description: 'Use this block type for adding Folwell theme components to your page'

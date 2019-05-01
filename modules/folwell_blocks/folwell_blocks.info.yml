@@ -1,0 +1,8 @@
+name: Folwell Blocks
+description: Provides blocks for integrating Folwell components with theme regions/Layout Builder
+core: 8.x
+package: Folwell
+type: module
+dependencies:
+    - folwell_paragraphs
+    - layout_builder_modal
