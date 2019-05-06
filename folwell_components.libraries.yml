@@ -10,6 +10,9 @@ fwpullquote:
             "assets/css/pullquote.css": {}
 folwell_accordion:
     version: 1
+    css:
+        component:
+            "assets/css/accordion.css": {}
     js:
         assets/js/accordion.js: {}
     dependencies:

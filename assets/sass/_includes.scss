@@ -2,15 +2,23 @@
 $blue: #00f;
 $gold: #fc3;
 $gold-light: #ffde7a;
+$gold-header: #ffd75f;
 $gray-lighter: #f0efee;
 $gray-medium: #777677;
 $gray-dark: #5a5a5a;
+$gray-darker: #333;
 $maroon-light: #900021;
 $white: #fff;
+$off-white: #f9f7f6;
+$light-bg: #ddd;
 $callout-break: 50em;
 $accent-border: solid $gold;
 $font-stack-georgia: Georgia, Times, "Times New Roman", serif;
 $small-screen: 30em !default;
+
+$font-stack-open-sans: 'Open Sans', sans-serif;
+$base-font-family: $font-stack-open-sans, !default;
+$base-line-height: 1.5;
 
 @mixin accent-border($side: all) {
   @if ($side == all) {
