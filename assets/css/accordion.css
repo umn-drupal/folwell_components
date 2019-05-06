@@ -1,0 +1,47 @@
+.ui-accordion .ui-accordion-icons { padding-left: 2.2em; }
+
+.ui-accordion .ui-accordion-header { display: block; cursor: pointer; position: relative; margin: 6px 0 0; padding: 1em 1em 1em 2.3em; min-height: 0; font-size: 100%; background-color: #ddd !important; border-radius: 0; border: none; }
+
+.ui-corner-all, .ui-corner-bottom, .ui-corner-right, .ui-corner-br { border-bottom-right-radius: 4px; }
+
+.ui-corner-all, .ui-corner-bottom, .ui-corner-left, .ui-corner-bl { border-bottom-left-radius: 4px; }
+
+.ui-corner-all, .ui-corner-top, .ui-corner-right, .ui-corner-tr { border-top-right-radius: 4px; }
+
+.ui-corner-all, .ui-corner-top, .ui-corner-left, .ui-corner-tl { border-top-left-radius: 4px; }
+
+.ui-state-default, .ui-widget-content .ui-state-default, .ui-widget-header .ui-state-default { background: none; font-weight: normal; color: #333; font-family: "Open Sans", sans-serif; }
+
+.ui-widget-content { color: #333; border: none; background: #f9f7f6; line-height: 1.5; }
+
+.ui-state-default .ui-icon { background-image: none; display: none; }
+
+.ui-state-default .ui-icon:hover { background-image: none; }
+
+.accordion { margin-bottom: 2rem; }
+
+.accordion h3 { background-color: #fc3; color: #333; cursor: pointer; font-size: 1.71098rem; margin: 0.666em 0; line-height: 1rem; outline: none; padding: .5rem .5rem .5rem 2rem; position: relative; text-transform: none; transition: all .3s ease-in-out; letter-spacing: 0.025em; line-height: 1.44em; font-weight: 400; }
+
+.accordion h3:hover, .accordion h3:focus, .accordion h3.ui-state-active { background-color: #ffd75f !important; }
+
+.accordion h3 .arrow { font-size: 1.25rem; content: "+"; left: 0; line-height: 1.9rem; position: absolute; text-align: center; top: 0; transition: all .5s ease-in-out; width: 2rem; top: 23%; left: .3em; }
+
+.accordion h3.ui-state-active .arrow { -webkit-transform: rotate(-225deg); transform: rotate(-225deg); line-height: 2rem; padding-left: .1rem; font-weight: 600; font-size: 1.4rem; left: .3em; }
+
+.ui-widget-content h3 a, .ui-widget-content h3 a:link { border-bottom: none; }
+
+.ui-widget { color: #333; font-family: "Open Sans", sans-serif; font-weight: 400; line-height: 1.5; }
+
+.ui-accordion .ui-accordion-content { padding: 1.25em; border-top: 0; overflow: auto; border-radius: 0; margin-bottom: 6px; }
+
+.ui-accordion .ui-accordion-content h2, .ui-accordion .ui-accordion-content h3, .ui-accordion .ui-accordion-content h4, .ui-accordion .ui-accordion-content h5, .ui-accordion .ui-accordion-content h6 { margin-top: 0; margin-bottom: 15px; }
+
+.ui-widget button { font-family: "Open Sans", sans-serif; }
+
+.ui-state-active a, .ui-state-active a:link { color: #333 !important; border-bottom: none; }
+
+h3.ui-accordion-header a, h3.ui-accordion-header a:link { color: #333; border-bottom: none; }
+
+h3.ui-accordion-header a:hover, h3.ui-accordion-header a:link:hover { background: none; }
+
+/*# sourceMappingURL=maps/accordion.css.map */
