@@ -1,5 +1,8 @@
 <?php
 
+use Drupal\Core\Form\FormStateInterface;
+use Drupal\Core\Render\Element;
+
 /**
  * Implements hook_editor_js_settings_alter().
  */
@@ -150,6 +153,60 @@ function folwell_components_page_attachments(array &$page) {
   );
   $page['#attached']['library'] = !empty($page['#attached']['library']) ?
     array_merge($page['#attached']['library'], $loaded_libraries) : $loaded_libraries;
+}
+
+/**
+ * Update paragraph widgets to assign button classes to actions. Only apply if
+ * current theme is Folwell or a child of Folwell.
+ */
+function folwell_components_field_widget_entity_reference_paragraphs_form_alter(array &$element, FormStateInterface &$form_state, array $context) {
+  $current_theme = \Drupal::theme()->getActiveTheme();
+  if ($current_theme->getName() !== 'folwell') {
+    $base_themes = array_keys($current_theme->getBaseThemeExtensions());
+    if (!in_array('folwell', $base_themes)) {
+      return;
+    }
+  }
+  _folwell_components_find_actions($element);
+}
+
+/**
+ * Update paragraph experimental widgets to assign button classes to actions.
+ * Only apply if current theme is Folwell or a child of Folwell.
+ */
+function folwell_components_field_widget_paragraphs_form_alter(array &$element, FormStateInterface &$form_state, array $context) {
+  $current_theme = \Drupal::theme()->getActiveTheme();
+  if ($current_theme->getName() !== 'folwell') {
+    $base_themes = array_keys($current_theme->getBaseThemeExtensions());
+    if (!in_array('folwell', $base_themes)) {
+      return;
+    }
+  }
+  _folwell_components_find_actions($element);
+}
+
+/**
+ * Recurse through form to find actions, apply classes.
+ */
+function _folwell_components_find_actions(&$element) {
+  $children = Element::children($element);
+  if (count($children) > 0) {
+    foreach ($children as $child) {
+      if ($element[$child]['#type'] == 'paragraphs_actions') {
+        if (array_key_exists('actions', ($element[$child]))) {
+          foreach ($element[$child]['actions'] as &$action) {
+            $attributes = !empty($action['#attributes']) ? $action['#attributes'] : ['class' => []];
+            $button_classes = ['btn', 'bg-maroon'];
+            $attributes['class'] = array_unique(array_merge($attributes['class'], $button_classes));
+            $action['#attributes'] = $attributes;
+          }
+        }
+      }
+      else {
+        _folwell_components_find_actions($element[$child]);
+      }
+    }
+  }
 }
 
 /**
