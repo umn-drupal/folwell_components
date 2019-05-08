@@ -4,6 +4,7 @@ dependencies:
   module:
     - editor
     - entity_embed
+    - linkit
 name: 'Folwell CKEditor'
 format: folwell_ckeditor
 weight: 0
@@ -47,3 +48,10 @@ filters:
     status: true
     weight: 10
     settings: {  }
+  linkit:
+    id: linkit
+    provider: linkit
+    status: true
+    weight: 0
+    settings:
+      title: true
