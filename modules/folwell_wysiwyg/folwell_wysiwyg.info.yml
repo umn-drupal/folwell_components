@@ -5,3 +5,7 @@ package: Folwell
 type: module
 dependencies:
     - folwell_components
+    - linkit
+    - editor
+    - ckeditor
+    - entity_embed
