@@ -1,0 +1,31 @@
+<?php
+/**
+ * @file
+ * Update hooks for Folwell Paragraphs module.
+ */
+
+/**
+ * Ensure linkit module is enabled.
+ */
+function folwell_wysiwyg_update_8001(&$sandbox) {
+  $module_handler = \Drupal::service('module_handler');
+  if (!$module_handler->moduleExists('linkit')) {
+    $module_installer = \Drupal::service('module_installer');
+    $module_installer->install(['linkit'], TRUE);
+  }
+}
+
+/**
+ * Add configs for folwell ckeditor configuration
+ */
+function folwell_wysiwyg_update_8002(&$sandbox) {
+  $module_path = drupal_get_path('module', 'folwell_wysiwyg');
+  $config_list = [
+    'editor.editor.folwell_ckeditor',
+    'filter.format.folwell_ckeditor.yml',
+    'linkit.linkit_profile.folwell_linkit.yml',
+  ];
+  foreach ($config_list as $config) {
+    folwell_components_read_in_new_config($config, $module_path);
+  }
+}
