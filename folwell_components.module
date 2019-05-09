@@ -1,7 +1,9 @@
 <?php
 
+use Drupal\Core\Config\FileStorage;
 use Drupal\Core\Form\FormStateInterface;
 use Drupal\Core\Render\Element;
+use Symfony\Component\Yaml\Yaml;
 
 /**
  * Implements hook_editor_js_settings_alter().
@@ -220,4 +222,48 @@ function _flatten_array($array) {
     $return[] = $a;
   });
   return $return;
+}
+
+
+/**
+ * Reads in new configuration.
+ * Shamelessly stolen from Bootstrap Paragraphs
+ * (http://drupal.org/project/bootstrap_paragraphs)
+ *
+ * @param string $config_name
+ *   Configuration name.
+ * @param string $module_path
+ *   Base path.
+ */
+function folwell_components_read_in_new_config($config_name, $module_path) {
+  /** @var \Drupal\Core\Config\StorageInterface $active_storage */
+  $active_storage = \Drupal::service('config.storage');
+  $active_storage->write($config_name, Yaml::parse(
+    file_get_contents($module_path . '/config/install/' . $config_name . '.yml')
+  ));
+}
+
+function folwell_components_add_field_configs($config_list, $module_path) {
+  foreach ($config_list as $config) {
+    $config_storage = new FileStorage($module_path . '/config/install');
+    $config_record = $config_storage->read($config);
+    $entity_type = \Drupal::service('config.manager')->getEntityTypeIdByName(
+      $config
+    );
+    /** @var \Drupal\Core\Config\Entity\ConfigEntityStorageInterface $storage */
+    $storage = \Drupal::entityTypeManager()->getStorage($entity_type);
+    $entity = $storage->createFromStorageRecord($config_record);
+    $entity->save();
+  }
+}
+
+function folwell_components_edit_configs($config_list, $module_path) {
+  $config_factory = \Drupal::configFactory();
+  $config_storage = new FileStorage($module_path . '/config/install');
+  foreach ($config_list as $config) {
+    $editable = $config_factory->getEditable($config);
+    $new_config = $config_storage->read($config);
+    $editable->setData($new_config);
+    $editable->save();
+  }
 }
