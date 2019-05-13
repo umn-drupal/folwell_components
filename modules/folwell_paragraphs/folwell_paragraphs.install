@@ -242,3 +242,25 @@ function folwell_paragraphs_update_8006(&$sandbox) {
   ];
   folwell_components_edit_configs($display_configs, $module_path);
 }
+
+/**
+ * Update paragraph configs to switch to Paragraphs Experimental widget.
+ */
+function folwell_paragraphs_install_8007(&$sandbox) {
+  $module_path = drupal_get_path('module', 'folwell_paragraphs');
+  $display_configs = [
+    'core.entity_form_display.paragraph.fa_accordion_item.default',
+    'core.entity_form_display.paragraph.folwell_100_image.default',
+    'core.entity_form_display.paragraph.folwell_20_image.default',
+    'core.entity_form_display.paragraph.folwell_33_image.default',
+    'core.entity_form_display.paragraph.folwell_50_image.default',
+    'core.entity_form_display.paragraph.folwell_accordion.default',
+    'core.entity_form_display.paragraph.folwell_callout.default',
+    'core.entity_form_display.paragraph.folwell_image.default',
+    'core.entity_form_display.paragraph.folwell_overlay_slideshow.default',
+    'core.entity_form_display.paragraph.folwell_slideshow.default',
+    'core.entity_form_display.paragraph.fs_overlay_slide.default',
+    'core.entity_form_display.paragraph.fs_slide.default',
+  ];
+  folwell_components_edit_configs($display_configs, $module_path);
+}
