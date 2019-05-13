@@ -22,8 +22,8 @@ function folwell_wysiwyg_update_8002(&$sandbox) {
   $module_path = drupal_get_path('module', 'folwell_wysiwyg');
   $config_list = [
     'editor.editor.folwell_ckeditor',
-    'filter.format.folwell_ckeditor.yml',
-    'linkit.linkit_profile.folwell_linkit.yml',
+    'filter.format.folwell_ckeditor',
+    'linkit.linkit_profile.folwell_linkit',
   ];
   foreach ($config_list as $config) {
     folwell_components_read_in_new_config($config, $module_path);
