@@ -19,17 +19,19 @@
         },
         template:
           '<aside class="callout callout-background display-100 align-none">' +
-          '<header class="callout-header"><h1>Header</h1></header>' +
+          '<header class="callout-header"><h2>Header</h2></header>' +
           '<div class="callout-content"><p>Content</p></div>' +
           "</aside>",
         editables: {
           header: {
             selector: "header.callout-header",
-            allowedContent: "h1 h2 h3 strong em"
+            allowedContent:
+              "h2 h3 h4 strong em a[class,href,hreflang,title,id,target,rel]"
           },
           content: {
             selector: "div.callout-content",
-            allowedContent: "p br ul ol li strong em div"
+            allowedContent:
+              "p br ul ol li strong em div a[class,href,hreflang,title,id,target,rel]"
           }
         },
         allowedContent:
