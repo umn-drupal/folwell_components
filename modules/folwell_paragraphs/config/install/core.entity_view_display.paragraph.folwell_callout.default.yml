@@ -10,8 +10,6 @@ dependencies:
   module:
     - options
     - text
-_core:
-  default_config_hash: wNcaJvBAbPFNZSGtsNuNfjcsnzL5nuBeMhK9xl_rf00
 id: paragraph.folwell_callout.default
 targetEntityType: paragraph
 bundle: folwell_callout

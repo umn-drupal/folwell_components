@@ -10,8 +10,6 @@ dependencies:
     - media.type.image
   module:
     - image
-_core:
-  default_config_hash: VLDxfMVPTkd2xvOjFMCh3kWmaOYnd03zggFXuUXQVEY
 id: media.image.folwell_third
 targetEntityType: media
 bundle: image

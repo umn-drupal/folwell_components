@@ -5,8 +5,6 @@ dependencies:
   enforced:
     module:
       - slick
-_core:
-  default_config_hash: Zyx4BsKtbNFnRU7WTHAF0DGHMenI0b_Czn4dwl1bQTc
 id: folwell_slideshow
 name: folwell_slideshow
 label: 'Folwell Slideshow'

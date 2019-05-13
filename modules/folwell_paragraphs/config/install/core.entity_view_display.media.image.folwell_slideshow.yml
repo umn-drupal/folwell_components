@@ -16,8 +16,6 @@ third_party_settings:
     sections: {  }
     allow_custom: false
     enabled: false
-_core:
-  default_config_hash: VLDxfMVPTkd2xvOjFMCh3kWmaOYnd03zggFXuUXQVEY
 id: media.image.folwell_slideshow
 targetEntityType: media
 bundle: image
