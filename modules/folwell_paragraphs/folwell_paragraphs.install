@@ -246,7 +246,7 @@ function folwell_paragraphs_update_8006(&$sandbox) {
 /**
  * Update paragraph configs to switch to Paragraphs Experimental widget.
  */
-function folwell_paragraphs_install_8007(&$sandbox) {
+function folwell_paragraphs_update_8007(&$sandbox) {
   $module_path = drupal_get_path('module', 'folwell_paragraphs');
   $display_configs = [
     'core.entity_form_display.paragraph.fa_accordion_item.default',
