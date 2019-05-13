@@ -7,7 +7,6 @@ dependencies:
     - field.field.paragraph.folwell_overlay_slideshow.field_fs_slide_item
     - paragraphs.paragraphs_type.folwell_overlay_slideshow
   module:
-    - content_moderation
     - paragraphs
     - text
 id: paragraph.folwell_overlay_slideshow.default
@@ -32,8 +31,14 @@ content:
       add_mode: dropdown
       form_display_mode: default
       default_paragraph_type: fs_overlay_slide
+      closed_mode: summary
+      autocollapse: none
+      closed_mode_threshold: 0
+      features:
+        duplicate: duplicate
+        collapse_edit_all: collapse_edit_all
     third_party_settings: {  }
-    type: entity_reference_paragraphs
+    type: paragraphs
     region: content
   moderation_state:
     type: moderation_state_default

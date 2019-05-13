@@ -6,7 +6,6 @@ dependencies:
     - field.field.paragraph.folwell_100_image.field_fw_callout_image
     - paragraphs.paragraphs_type.folwell_100_image
   module:
-    - content_moderation
     - media_library
 id: paragraph.folwell_100_image.default
 targetEntityType: paragraph

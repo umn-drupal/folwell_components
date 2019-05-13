@@ -8,7 +8,6 @@ dependencies:
     - field.field.paragraph.fs_overlay_slide.field_fw_callout_image
     - paragraphs.paragraphs_type.fs_overlay_slide
   module:
-    - content_moderation
     - media_library
     - text
 id: paragraph.fs_overlay_slide.default

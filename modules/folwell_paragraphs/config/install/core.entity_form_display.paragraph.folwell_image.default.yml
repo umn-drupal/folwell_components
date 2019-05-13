@@ -8,7 +8,6 @@ dependencies:
     - field.field.paragraph.folwell_image.field_folwell_image_item
     - paragraphs.paragraphs_type.folwell_image
   module:
-    - content_moderation
     - paragraphs
     - text
 id: paragraph.folwell_image.default
@@ -33,7 +32,7 @@ content:
     type: text_textarea
     region: content
   field_folwell_image_item:
-    type: entity_reference_paragraphs
+    type: paragraphs
     weight: 102
     settings:
       title: Paragraph
@@ -42,6 +41,12 @@ content:
       add_mode: dropdown
       form_display_mode: default
       default_paragraph_type: ''
+      closed_mode: summary
+      autocollapse: none
+      closed_mode_threshold: 0
+      features:
+        duplicate: duplicate
+        collapse_edit_all: collapse_edit_all
     third_party_settings: {  }
     region: content
   moderation_state:

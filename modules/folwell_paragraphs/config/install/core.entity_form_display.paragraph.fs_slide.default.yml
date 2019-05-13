@@ -9,7 +9,6 @@ dependencies:
     - field.field.paragraph.fs_slide.field_fw_callout_image
     - paragraphs.paragraphs_type.fs_slide
   module:
-    - content_moderation
     - entity_browser
     - link
     - text
