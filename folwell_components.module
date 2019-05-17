@@ -10,119 +10,124 @@ use Symfony\Component\Yaml\Yaml;
  */
 function folwell_components_editor_js_settings_alter(array &$settings) {
   // Add wysiwyg styles for buttons/links and image styles.
-    if (isset($settings['editor']['formats']['rich_text'])) {
-      $styles_array = [
-        [
-          'name' => 'Regular Button',
-          'element' => 'a',
-          'attributes' => [
-            'class' => 'bg-maroon btn'
-          ]
+  if (isset($settings['editor']['formats']['rich_text'])) {
+    $styles_array = [
+      [
+        'name' => 'Regular Button',
+        'element' => 'a',
+        'attributes' => [
+          'class' => 'bg-maroon btn',
         ],
-        [
-          'name' => 'Small Button',
-          'element' => 'a',
-          'attributes' => [
-            'class' => 'bg-maroon btn btn-small'
-          ]
+      ],
+      [
+        'name' => 'Small Button',
+        'element' => 'a',
+        'attributes' => [
+          'class' => 'bg-maroon btn btn-small',
         ],
-        [
-          'name' => 'Emphasis Button',
-          'element' => 'a',
-          'attributes' => [
-            'class' => 'bg-maroon btn btn-arrow'
-          ]
+      ],
+      [
+        'name' => 'Emphasis Button',
+        'element' => 'a',
+        'attributes' => [
+          'class' => 'bg-maroon btn btn-arrow',
         ],
-        [
-          'name' => 'Outline Button',
-          'element' => 'a',
-          'attributes' => [
-            'class' => 'btn btn-outline'
-          ]
+      ],
+      [
+        'name' => 'Outline Button',
+        'element' => 'a',
+        'attributes' => [
+          'class' => 'btn btn-outline',
         ],
-        [
-          'name' => 'Full-Width Button',
-          'element' => 'a',
-          'attributes' => [
-            'class' => 'bg-maroon btn btn-full'
-          ]
+      ],
+      [
+        'name' => 'Full-Width Button',
+        'element' => 'a',
+        'attributes' => [
+          'class' => 'bg-maroon btn btn-full',
         ],
-        [
-          'name' => 'Give Button',
-          'element' => 'a',
-          'attributes' => [
-            'class' => 'btn btn-arrow btn-give'
-          ]
+      ],
+      [
+        'name' => 'Give Button',
+        'element' => 'a',
+        'attributes' => [
+          'class' => 'btn btn-arrow btn-give',
         ],
-        [
-          'name' => 'Emphasis Link',
-          'element' => 'a',
-          'attributes' => [
-            'class' => 'emphasis'
-          ]
+      ],
+      [
+        'name' => 'Emphasis Link',
+        'element' => 'a',
+        'attributes' => [
+          'class' => 'emphasis',
         ],
-        [
-          'element' => 'drupal-entity',
-          'type' => 'widget',
-          'widget' => 'drupalentity',
-          'name' => '50% Image',
-          'attributes' => ['class' => 'display-50']
+      ],
+      [
+        'element' => 'drupal-entity',
+        'type' => 'widget',
+        'widget' => 'drupalentity',
+        'name' => '50% Image',
+        'attributes' => ['class' => 'display-50'],
+      ],
+      [
+        'element' => 'drupal-entity',
+        'type' => 'widget',
+        'widget' => 'drupalentity',
+        'name' => '33% Image',
+        'attributes' => ['class' => 'display-33'],
+      ],
+      [
+        'element' => 'drupal-entity',
+        'type' => 'widget',
+        'widget' => 'drupalentity',
+        'name' => '20% Image',
+        'attributes' => ['class' => 'display-20'],
+      ],
+      [
+        'element' => 'drupal-entity',
+        'type' => 'widget',
+        'widget' => 'drupalentity',
+        'name' => 'Full-width Image',
+        'attributes' => ['class' => 'display-100'],
+      ],
+      [
+        'element' => 'drupal-entity',
+        'type' => 'widget',
+        'widget' => 'drupalentity',
+        'name' => 'Circle Image',
+        'attributes' => ['class' => 'img-circle'],
+      ],
+      [
+        'name' => 'Photo Credit',
+        'element' => 'p',
+        'attributes' => [
+          'class' => 'photo-credit',
         ],
-        [
-          'element' => 'drupal-entity',
-          'type' => 'widget',
-          'widget' => 'drupalentity',
-          'name' => '33% Image',
-          'attributes' => ['class' => 'display-33']
+      ],
+      [
+        'name' => 'Intro Text',
+        'element' => 'p',
+        'attributes' => [
+          'class' => 'txt-intro',
         ],
-        [
-          'element' => 'drupal-entity',
-          'type' => 'widget',
-          'widget' => 'drupalentity',
-          'name' => '20% Image',
-          'attributes' => ['class' => 'display-20']
-        ],
-        [
-          'element' => 'drupal-entity',
-          'type' => 'widget',
-          'widget' => 'drupalentity',
-          'name' => 'Full-width Image',
-          'attributes' => ['class' => 'display-100']
-        ],
-        [
-          'element' => 'drupal-entity',
-          'type' => 'widget',
-          'widget' => 'drupalentity',
-          'name' => 'Circle Image',
-          'attributes' => ['class' => 'img-circle']
-        ],
-        [
-          'name' => 'Photo Credit',
-          'element' => 'p',
-          'attributes' => [
-            'class' => 'photo-credit'
-          ]
-        ],
-        [
-          'name' => 'Intro Text',
-          'element' => 'p',
-          'attributes' => [
-            'class' => 'txt-intro'
-          ]
-        ]
-      ];
-      $settings['editor']['formats']['rich_text']['editorSettings']['stylesSet'] =
-        is_array($settings['editor']['formats']['rich_text']['editorSettings']['stylesSet']) ?
-        array_merge($settings['editor']['formats']['rich_text']['editorSettings']['stylesSet'], $styles_array) :
-        $styles_array;
-    }
+      ],
+    ];
+    $settings['editor']['formats']['rich_text']['editorSettings']['stylesSet'] =
+      is_array($settings['editor']['formats']['rich_text']['editorSettings']['stylesSet']) ?
+      array_merge($settings['editor']['formats']['rich_text']['editorSettings']['stylesSet'], $styles_array) :
+      $styles_array;
+  }
 }
 
+/**
+ * Implements hook_page_attachments().
+ *
+ * @todo consider moving this into folwell_wysiwyg
+ */
 function folwell_components_page_attachments(array &$page) {
-  // Load in styles for component if component is actually in-use
+  // Load in styles for component if component is actually in-use.
   $plugin_libraries = [
     'fwcallout' => FALSE,
-    'fwpullquote' => FALSE
+    'fwpullquote' => FALSE,
   ];
   $editor_manager = \Drupal::entityTypeManager()->getStorage('editor');
   $editors = $editor_manager->loadMultiple();
@@ -141,25 +146,35 @@ function folwell_components_page_attachments(array &$page) {
       }
     }
   }
+
+  // Turn array of library name keys and bool values into a list of keys from
+  // folwell_components.libraries.yml so they can attach to the page request.
   $loaded_libraries = array_map(
-    function($lib) {
+    function ($lib) {
       return 'folwell_components/' . $lib;
     },
     array_keys(
-      array_filter($plugin_libraries,
-        function($val) {
+      array_filter(
+        $plugin_libraries,
+        function ($val) {
           return $val;
         }
       )
     )
   );
-  $page['#attached']['library'] = !empty($page['#attached']['library']) ?
-    array_merge($page['#attached']['library'], $loaded_libraries) : $loaded_libraries;
+  $page['#attached']['library'] =
+    !empty($page['#attached']['library']) ?
+    array_merge($page['#attached']['library'], $loaded_libraries) :
+    $loaded_libraries;
 }
 
 /**
- * Update paragraph widgets to assign button classes to actions. Only apply if
- * current theme is Folwell or a child of Folwell.
+ * Update paragraph widgets to assign button classes to actions.
+ *
+ * Implements hook_field_widget_WIDGET_TYPE_form_alter().
+ *
+ * ERR Paragraphs is Paragraphs Classic widget. Only apply if current theme is
+ * Folwell or a child of Folwell.
  */
 function folwell_components_field_widget_entity_reference_paragraphs_form_alter(array &$element, FormStateInterface &$form_state, array $context) {
   $current_theme = \Drupal::theme()->getActiveTheme();
@@ -173,8 +188,14 @@ function folwell_components_field_widget_entity_reference_paragraphs_form_alter(
 }
 
 /**
- * Update paragraph experimental widgets to assign button classes to actions.
- * Only apply if current theme is Folwell or a child of Folwell.
+ * Update paragraph widgets to assign button classes to actions.
+ *
+ * Implements hook_field_widget_WIDGET_TYPE_form_alter().
+ *
+ * This version is for Paragraphs Experimental widget. Only apply if current
+ * theme is Folwell or a child of Folwell.
+ *
+ * @todo refactor these into a single function.
  */
 function folwell_components_field_widget_paragraphs_form_alter(array &$element, FormStateInterface &$form_state, array $context) {
   $current_theme = \Drupal::theme()->getActiveTheme();
@@ -212,9 +233,13 @@ function _folwell_components_find_actions(&$element) {
 }
 
 /**
- * @param $array
- * Take a nested array and flatten it down to single array of all its values
+ * Take a nested array and flatten it down to single array of all its values.
+ *
+ * @param array $array
+ *   Array to be flattened.
+ *
  * @return array
+ *   Flattened array.
  */
 function _flatten_array($array) {
   $return = [];
@@ -224,9 +249,9 @@ function _flatten_array($array) {
   return $return;
 }
 
-
 /**
  * Reads in new configuration.
+ *
  * Shamelessly stolen from Bootstrap Paragraphs
  * (http://drupal.org/project/bootstrap_paragraphs)
  *
@@ -243,9 +268,17 @@ function folwell_components_read_in_new_config($config_name, $module_path) {
   ));
 }
 
-function folwell_components_add_field_configs($config_list, $module_path) {
+/**
+ * Helper function for saving field storage and field instance configs.
+ *
+ * @param array $config_list
+ *   List of configurations to be saved.
+ * @param string $module_path
+ *   Base path.
+ */
+function folwell_components_add_field_configs(array $config_list, $module_path) {
+  $config_storage = new FileStorage($module_path . '/config/install');
   foreach ($config_list as $config) {
-    $config_storage = new FileStorage($module_path . '/config/install');
     $config_record = $config_storage->read($config);
     $entity_type = \Drupal::service('config.manager')->getEntityTypeIdByName(
       $config
@@ -257,7 +290,15 @@ function folwell_components_add_field_configs($config_list, $module_path) {
   }
 }
 
-function folwell_components_edit_configs($config_list, $module_path) {
+/**
+ * Helper function for changing editable configs.
+ *
+ * @param array $config_list
+ *   List of configurations to be saved.
+ * @param string $module_path
+ *   Base path.
+ */
+function folwell_components_edit_configs(array $config_list, $module_path) {
   $config_factory = \Drupal::configFactory();
   $config_storage = new FileStorage($module_path . '/config/install');
   foreach ($config_list as $config) {

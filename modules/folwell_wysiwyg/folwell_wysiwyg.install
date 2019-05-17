@@ -1,4 +1,5 @@
 <?php
+
 /**
  * @file
  * Update hooks for Folwell Paragraphs module.
@@ -16,7 +17,7 @@ function folwell_wysiwyg_update_8001(&$sandbox) {
 }
 
 /**
- * Add configs for folwell ckeditor configuration
+ * Add configs for folwell ckeditor configuration.
  */
 function folwell_wysiwyg_update_8002(&$sandbox) {
   $module_path = drupal_get_path('module', 'folwell_wysiwyg');

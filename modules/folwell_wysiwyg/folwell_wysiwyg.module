@@ -1,5 +1,10 @@
 <?php
 
+/**
+ * Implements hook_wysiwyg_editor_js_settings_alter().
+ *
+ * Ensure the plugin js is loaded if buttons are added to ckeditor config.
+ */
 function folwell_wysiwyg_editor_js_settings_alter(array &$settings) {
   foreach (array_keys($settings['editor']['formats']) as $text_format_id) {
     if ($settings['editor']['formats'][$text_format_id]['editor'] === 'ckeditor') {
@@ -13,13 +18,4 @@ function folwell_wysiwyg_editor_js_settings_alter(array &$settings) {
         base_path() . drupal_get_path('module', 'folwell_wysiwyg') . '/js/editorConfig.js';
     }
   }
-}
-
-
-/**
- * Implements hook_filter_info_alter().
- */
-function folwell_wysiwyg_filter_info_alter(&$info) {
-  // Testing
-  
 }
