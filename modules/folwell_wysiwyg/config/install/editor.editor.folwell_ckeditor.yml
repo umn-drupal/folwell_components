@@ -12,6 +12,16 @@ settings:
     rows:
       -
         -
+          name: Copy/Paste
+          items:
+            - Cut
+            - Copy
+            - Paste
+            - PasteText
+            - PasteFromWord
+            - Undo
+            - Redo
+        -
           name: Formatting
           items:
             - Bold
