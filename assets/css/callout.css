@@ -1,15 +1,3 @@
-.callout h1, .callout-horizontal h1, .callout-image h1 { font-size: 2em; font-weight: 700; }
-
-@media (min-width: 50em) { .callout h1, .callout-horizontal h1, .callout-image h1 { font-size: 1.777777778em; } }
-
-.callout h2, .callout-horizontal h2, .callout-image h2, .callout-overlay h1 { font-size: 1.5625em; font-weight: 600; line-height: 1.512; margin: 1.6em 0 1em; }
-
-@media (min-width: 50em) { .callout h2, .callout-horizontal h2, .callout-image h2, .callout-overlay h1 { font-size: 1.388888889em; } }
-
-.callout h3, .callout-horizontal h3, .callout-image h3, .callout-overlay h2 { font-size: 1.375em; font-weight: 600; }
-
-@media (min-width: 50em) { .callout h3, .callout-horizontal h3, .callout-image h3, .callout-overlay h2 { font-size: 1.222222222em; } }
-
 .callout h5 a, .callout h4 a, .callout h3 a, .callout h2 a, .callout h1 a, .callout-overlay h5 a, .callout-overlay h4 a, .callout-overlay h3 a, .callout-overlay h2 a, .callout-overlay h1 a, .callout-horizontal h5 a, .callout-horizontal h4 a, .callout-horizontal h3 a, .callout-horizontal h2 a, .callout-horizontal h1 a, .callout-image h5 a, .callout-image h4 a, .callout-image h3 a, .callout-image h2 a, .callout-image h1 a { border-bottom: 0; }
 
 .callout h6:first-child, .callout h5:first-child, .callout h4:first-child, .callout h3:first-child, .callout h2:first-child, .callout h1:first-child, .callout-overlay h6:first-child, .callout-overlay h5:first-child, .callout-overlay h4:first-child, .callout-overlay h3:first-child, .callout-overlay h2:first-child, .callout-overlay h1:first-child, .callout-horizontal h6:first-child, .callout-horizontal h5:first-child, .callout-horizontal h4:first-child, .callout-horizontal h3:first-child, .callout-horizontal h2:first-child, .callout-horizontal h1:first-child, .callout-image h6:first-child, .callout-image h5:first-child, .callout-image h4:first-child, .callout-image h3:first-child, .callout-image h2:first-child, .callout-image h1:first-child { margin-top: 0; margin-bottom: 15px; }
@@ -27,7 +15,8 @@
 .callout-horizontal { display: block; background: #ffde7a; }
 
 @media (min-width: 50em) { .callout-horizontal { display: flex; flex-direction: row-reverse; }
-  .callout-horizontal > div { flex: 1; } }
+  .callout-horizontal .field--name-field-fw-callout-image { flex: 0 0 auto; width: 60%; }
+  .callout-horizontal .callout { flex: 1 1 auto; } }
 
 .callout-image article, .callout-horizontal article { margin: 0; }
 
