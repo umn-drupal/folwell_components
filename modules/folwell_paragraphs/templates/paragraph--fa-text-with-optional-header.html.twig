@@ -1,6 +1,8 @@
 {% extends  "paragraph.html.twig" %}
 
 {% block content %}
-    <h4>{{ content.field_fa_accordion_item_header }}</h4>
+    {% if content.field_fa_accordion_item_header|render %}
+        <h4>{{ content.field_fa_accordion_item_header }}</h4>
+    {% endif %}
     {{ content.field_fa_text_item_body }}
 {% endblock content %}
