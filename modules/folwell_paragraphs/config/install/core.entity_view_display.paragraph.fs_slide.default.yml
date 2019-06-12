@@ -53,30 +53,32 @@ third_party_settings:
                 type: text_default
             additional: {  }
             weight: 4
+        third_party_settings: {  }
     allow_custom: false
     enabled: true
   layout_builder_restrictions:
-    allowed_blocks:
-      'Chaos tools': {  }
-      core: {  }
-      Devel: {  }
-      'Entity Block': {  }
-      Forms: {  }
-      Help: {  }
-      'Inline blocks': {  }
-      'Lists (Views)': {  }
-      Menus: {  }
-      Paragraph: {  }
-      'Paragraph fields':
-        - 'field_block:paragraph:fs_slide:field_fa_text_item_body'
-        - 'field_block:paragraph:fs_slide:field_fa_accordion_item_header'
-        - 'field_block:paragraph:fs_slide:field_fw_callout_image'
-      Superfish: {  }
-      System: {  }
-      'UMN Search Form Configuration': {  }
-      User: {  }
-      'User fields': {  }
-    allowed_layouts: {  }
+    entity_view_mode_restriction:
+      allowed_blocks:
+        'Chaos tools': {  }
+        core: {  }
+        Devel: {  }
+        'Entity Block': {  }
+        Forms: {  }
+        Help: {  }
+        'Inline blocks': {  }
+        'Lists (Views)': {  }
+        Menus: {  }
+        Paragraph: {  }
+        'Paragraph fields':
+          - 'field_block:paragraph:fs_slide:field_fa_text_item_body'
+          - 'field_block:paragraph:fs_slide:field_fa_accordion_item_header'
+          - 'field_block:paragraph:fs_slide:field_fw_callout_image'
+        Superfish: {  }
+        System: {  }
+        'UMN Search Form Configuration': {  }
+        User: {  }
+        'User fields': {  }
+      allowed_layouts: {  }
 id: paragraph.fs_slide.default
 targetEntityType: paragraph
 bundle: fs_slide
