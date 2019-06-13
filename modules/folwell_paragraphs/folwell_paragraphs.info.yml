@@ -11,3 +11,4 @@ dependencies:
     - slick_media
     - lightning_media
     - layout_builder
+    - a11y_paragraphs_tabs
