@@ -10,7 +10,7 @@ use Symfony\Component\Yaml\Yaml;
  */
 function folwell_components_editor_js_settings_alter(array &$settings) {
   // Add wysiwyg styles for buttons/links and image styles.
-  if (isset($settings['editor']['formats']['rich_text'])) {
+  if (isset($settings['editor']['formats']['folwell_ckeditor'])) {
     $styles_array = [
       [
         'name' => 'Regular Button',
@@ -111,9 +111,9 @@ function folwell_components_editor_js_settings_alter(array &$settings) {
         ],
       ],
     ];
-    $settings['editor']['formats']['rich_text']['editorSettings']['stylesSet'] =
-      is_array($settings['editor']['formats']['rich_text']['editorSettings']['stylesSet']) ?
-      array_merge($settings['editor']['formats']['rich_text']['editorSettings']['stylesSet'], $styles_array) :
+    $settings['editor']['formats']['folwell_ckeditor']['editorSettings']['stylesSet'] =
+      is_array($settings['editor']['formats']['folwell_ckeditor']['editorSettings']['stylesSet']) ?
+      array_merge($settings['editor']['formats']['folwell_ckeditor']['editorSettings']['stylesSet'], $styles_array) :
       $styles_array;
   }
 }
