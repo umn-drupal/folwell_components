@@ -43,8 +43,8 @@ settings:
         -
           name: Links
           items:
-            - Link
-            - Unlink
+            - DrupalLink
+            - DrupalUnlink
             - Anchor
         -
           name: Lists
