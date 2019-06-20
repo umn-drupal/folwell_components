@@ -1,3 +1,4 @@
+uuid: a996b864-e8a1-4f1e-8ae6-f99946584546
 langcode: en
 status: true
 dependencies:
@@ -5,6 +6,8 @@ dependencies:
     - editor
     - entity_embed
     - linkit
+_core:
+  default_config_hash: rBh2HWXBf-4cMWwNfAHP0pxGHvCyRVcz1wTWkkjR4gA
 name: 'Folwell CKEditor'
 format: folwell_ckeditor
 weight: 0
@@ -13,31 +16,31 @@ filters:
     id: editor_file_reference
     provider: editor
     status: true
-    weight: 0
+    weight: -48
     settings: {  }
   entity_embed:
     id: entity_embed
     provider: entity_embed
     status: true
-    weight: 0
+    weight: -47
     settings: {  }
   filter_align:
     id: filter_align
     provider: filter
     status: true
-    weight: 0
+    weight: -46
     settings: {  }
   filter_caption:
     id: filter_caption
     provider: filter
     status: true
-    weight: 0
+    weight: -45
     settings: {  }
   filter_html:
     id: filter_html
     provider: filter
     status: true
-    weight: -10
+    weight: -49
     settings:
       allowed_html: '<a name class href hreflang title id target rel> <em> <strong> <cite class> <blockquote cite> <code> <ul type> <ol start type> <li> <dl class> <dt> <dd> <h2 id> <h3 id> <h4 id> <h5 id> <h6 id> <s> <sup> <sub> <img src alt data-entity-type data-entity-uuid data-align data-caption> <table> <caption> <tbody> <thead> <tfoot> <th> <td> <tr> <hr> <p class> <br> <h1> <pre> <drupal-entity data-* title alt class> <section class> <div class> <aside class> <header class> <span class>'
       filter_html_help: false
@@ -46,12 +49,37 @@ filters:
     id: filter_htmlcorrector
     provider: filter
     status: true
-    weight: 10
+    weight: -44
     settings: {  }
   linkit:
     id: linkit
     provider: linkit
     status: true
-    weight: 0
+    weight: -50
     settings:
-      title: true
+      title: false
+  filter_html_image_secure:
+    id: filter_html_image_secure
+    provider: filter
+    status: false
+    weight: -40
+    settings: {  }
+  filter_url:
+    id: filter_url
+    provider: filter
+    status: false
+    weight: -41
+    settings:
+      filter_url_length: 72
+  filter_autop:
+    id: filter_autop
+    provider: filter
+    status: false
+    weight: -42
+    settings: {  }
+  filter_html_escape:
+    id: filter_html_escape
+    provider: filter
+    status: false
+    weight: -43
+    settings: {  }
