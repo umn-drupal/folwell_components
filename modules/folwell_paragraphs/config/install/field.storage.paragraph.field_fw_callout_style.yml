@@ -14,17 +14,29 @@ settings:
       value: callout-background
       label: 'Lighter Gray'
     -
+      value: callout-maroon
+      label: Maroon
+    -
       value: callout-border-all
       label: 'Gold Border'
     -
       value: callout-border-top
       label: 'Gold Line'
     -
+      value: callout-gold
+      label: 'Gold Background'
+    -
       value: callout-horizontal
-      label: Horizontal
+      label: 'Horizontal Gold'
+    -
+      value: callout-hmaroon
+      label: 'Horizontal Maroon'
     -
       value: callout-overlay
-      label: Overlay
+      label: 'Overlay Gold'
+    -
+      value: callout-omaroon
+      label: 'Overlay Maroon'
   allowed_values_function: ''
 module: options
 locked: false
