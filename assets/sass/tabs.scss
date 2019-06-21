@@ -1,0 +1,130 @@
+// Tabs: Folwell Theme Component
+@import "includes";
+
+.a11y-paragraphs-tabs__wrapper {
+  overflow: auto;
+  margin-bottom: 1.33em;
+  .accordion-tabs.js-tabs {
+    .tabs-panel {
+      border: none;
+      clear: both;
+      float: left;
+      width: 100%;
+      overflow: auto;
+      margin-bottom: 10px;
+      .content {
+        padding: 1.25em;
+        background: $off_white;
+        float: left;
+        width: 100%;
+        > ul {
+          margin-top: 0;
+        }
+        > p + ul {
+          margin-top: -1.1em;
+        }
+      }
+      .accordeon-trigger {
+        background-color: transparentize($gray-light, 0.2);
+        font-size: 1.125em;
+        font-weight: 700;
+        color: $gray-darker;
+        padding: 5px 20px 5px 10px;
+        line-height: 2.4;
+        justify-content: flex-start;
+        &:before {
+          content: "+";
+          width: 2rem;
+          text-align: center;
+          transition: all 0.5s ease-in-out;
+        }
+      }
+      &.is-open .accordeon-trigger {
+        background-color: $gold-header;
+        &:before {
+          transform: rotate(-225deg);
+        }
+      }
+    }
+    @include breakpoint(768px) {
+      .tabs-tab-list {
+        margin-bottom: 0;
+        border-bottom: 1px solid $gold-header;
+        width: 100%;
+        > li {
+          padding: 0;
+          min-width: 100px;
+          .tabs-trigger,
+          .tabs-trigger:hover,
+          .tabs-trigger:focus {
+            border: none;
+          }
+          .tabs-trigger {
+            background-color: transparentize($gray-light, 0.2);
+            transition: none;
+            color: $gray-darker;
+            margin: 0 6px 0 0;
+            padding: 10px 25px;
+            line-height: 31px;
+            &:hover {
+              background-color: transparentize($gray-medium, 0.65);
+            }
+            &.is-selected {
+              background-color: $gold-header;
+            }
+          }
+        }
+      }
+      .tabs-panel {
+        border-top: 6px solid $gold-header;
+        margin-bottom: 0.4em;
+        .content {
+          //margin-bottom: 0.4em;
+        }
+        .accordeon-trigger {
+          margin: 10px auto;
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 480px) {
+  //.tabs {
+  //  display: none;
+  //}
+  //.tab_container {
+  //  border-top: 0;
+  //  margin-bottom: 1.3em;
+  //}
+  //.tab_drawer_heading {
+  //  display: block;
+  //  cursor: pointer;
+  //  &:first-child {
+  //    margin: 0;
+  //  }
+  //  user-select: none;
+  //  >.arrow {
+  //    position: relative;
+  //    text-align: center;
+  //    -webkit-transition: all .5s ease-in-out;
+  //    transition: all .5s ease-in-out;
+  //    width: 2rem;
+  //    left: 0;
+  //    display: block;
+  //    float: left;
+  //  }
+  //}
+  //.d_active {
+  //  background-color: $gold-header;
+  //  display: block;
+  //  font-weight: 700;
+  //  >.arrow {
+  //    transform: rotate(-225deg);
+  //    line-height: 2rem;
+  //    padding-left: .1rem;
+  //    font-weight: 600;
+  //    font-size: 1.4rem;
+  //  }
+  //}
+}
