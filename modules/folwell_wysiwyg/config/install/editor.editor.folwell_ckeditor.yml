@@ -12,13 +12,8 @@ settings:
     rows:
       -
         -
-          name: Copy/Paste
+          name: Undo/Redo
           items:
-            - Cut
-            - Copy
-            - Paste
-            - PasteText
-            - PasteFromWord
             - Undo
             - Redo
         -
@@ -84,3 +79,4 @@ image_upload:
   max_dimensions:
     width: null
     height: null
+
