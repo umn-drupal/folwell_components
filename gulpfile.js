@@ -1,7 +1,6 @@
 const gulp = require('gulp'),
   gutil = require('gulp-util'),
   sass = require('gulp-sass'),
-  glob = require('gulp-sass-glob'),
   watch = require('gulp-watch'),
   shell = require('gulp-shell'),
   notify = require('gulp-notify'),
@@ -10,22 +9,21 @@ const gulp = require('gulp'),
   uglify = require('gulp-uglify'),
   runSequence = require('run-sequence'),
   replace = require('gulp-replace'),
-  bourbon = require('bourbon').includePaths,
-  autoprefixer = require('gulp-autoprefixer');
+  autoprefixer = require('autoprefixer'),
+  postcss = require('gulp-postcss');
 
 /**
  * This task generates CSS from all SCSS files and compresses them down.
  */
 gulp.task('sass', function () {
+  var plugins = [autoprefixer()];
   return gulp.src('./assets/sass/**/*.scss')
   .pipe(sourcemaps.init())
-  .pipe(glob())
   .pipe(sass({
     noCache: true,
     outputStyle: "compact",
     lineNumbers: false,
     includePaths: [
-        bourbon,
         './node_modules/breakpoint-sass/stylesheets'
     ],
     sourceMap: true
@@ -33,7 +31,7 @@ gulp.task('sass', function () {
     gutil.log(error);
     this.emit('end');
   })
-  .pipe(autoprefixer())
+  .pipe(postcss(plugins))
   .pipe(sourcemaps.write('./maps'))
   .pipe(gulp.dest('./assets/css'))
   .pipe(notify({
@@ -64,11 +62,11 @@ gulp.task('compress', function () {
  */
 gulp.task('watch', function () {
   // watch scss for changes and clear drupal theme cache on change
-  gulp.watch(['scss/**/*.scss'], ['sass']);
+  gulp.watch(['assets/sass/**/*.scss'], gulp.series('sass'));
 
   // watch js for changes and clear drupal theme cache on change
-  gulp.watch(['js/js-src/**/*.js'], ['compress']);
+  // gulp.watch(['js/js-src/**/*.js'], ['compress']);
 });
 
 
-gulp.task('default', ['watch', 'browser-sync']);
+gulp.task('default', gulp.series('watch'));
