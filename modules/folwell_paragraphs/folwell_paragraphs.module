@@ -98,6 +98,10 @@ function folwell_paragraphs_preprocess_paragraph(&$variables) {
       }
       break;
 
+    case 'a11y_paragraphs_tabs_wrapper':
+      $variables['#attached']['library'][] = 'folwell_components/folwell_tabs';
+      break;
+
     default:
       return;
   }

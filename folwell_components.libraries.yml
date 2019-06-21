@@ -22,3 +22,8 @@ folwell_slider:
     css:
         component:
             "assets/css/slideshow.css": {}
+folwell_tabs:
+    version: 1
+    css:
+        component:
+            "assets/css/tabs.css": {}

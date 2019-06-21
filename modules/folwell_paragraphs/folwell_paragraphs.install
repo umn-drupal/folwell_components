@@ -8,6 +8,46 @@ use Drupal\Core\Config\FileStorage;
 use Drupal\image\Entity\ImageStyle;
 
 /**
+ * Implements hook_install().
+ */
+function folwell_paragraphs_install() {
+  // Get around problem of optional config not being included when module enabled
+  // as part of a site install task.
+  // Here we want all the configs included with a11y_paragraphs_tabs, check if they
+  // are installed so we don't end up erroring on importing configs, and then
+  // import any that are not in place.
+  $a11y_path = drupal_get_path('module', 'a11y_paragraphs_tabs');
+  $config_storage = new FileStorage($a11y_path . '/config/optional');
+  $a11y_configs = $config_storage->listAll();
+  $config_factory = \Drupal::configFactory();
+  $installed_configs = $config_factory->loadMultiple($a11y_configs);
+  $uninstalled_configs = array_diff($a11y_configs, array_keys($installed_configs));
+  if (count($uninstalled_configs) > 0) {
+    $field_storage_configs = array_filter($uninstalled_configs, function($item) {
+      return _folwell_paragraphs_config_filter($item, 'field.storage');
+    });
+    $field_configs = array_filter($uninstalled_configs, function($item) {
+      return _folwell_paragraphs_config_filter($item, 'field.field');
+    });
+    $paragraphs_configs = array_filter($uninstalled_configs, function($item) {
+      return _folwell_paragraphs_config_filter($item, 'paragraphs');
+    });
+    $core_configs = array_filter($uninstalled_configs, function($item) {
+      return _folwell_paragraphs_config_filter($item, 'core');
+    });
+    foreach ($paragraphs_configs as $pconfig) {
+      folwell_components_read_in_new_config($pconfig, $a11y_path, 'optional');
+    }
+    folwell_components_add_field_configs($field_storage_configs, $a11y_path, 'optional');
+    folwell_components_add_field_configs($field_configs, $a11y_path, 'optional');
+    foreach ($core_configs as $cconfig) {
+      folwell_components_read_in_new_config($cconfig, $a11y_path, 'optional');
+    }
+  }
+  _folwell_paragraphs_a11y_paragraph_label_update();
+}
+
+/**
  * Update configuration to include Callout paragraphs
  */
 function folwell_paragraphs_update_8001(&$sandbox) {
@@ -274,4 +314,33 @@ function folwell_paragraphs_update_8008(&$sandbox) {
     $module_installer = \Drupal::service('module_installer');
     $module_installer->install(['a11y_paragraphs_tabs'], TRUE);
   }
+}
+
+/**
+ * Change A11Y Paragraphs labels to "Folwell".
+ */
+function folwell_paragraphs_update_8009(&$sandbox) {
+  _folwell_paragraphs_a11y_paragraph_label_update();
+}
+
+function _folwell_paragraphs_a11y_paragraph_label_update() {
+  $configs = [
+    'paragraphs.paragraphs_type.a11y_paragraphs_tab_content',
+    'paragraphs.paragraphs_type.a11y_paragraphs_tabs_panel',
+    'paragraphs.paragraphs_type.a11y_paragraphs_tabs_wrapper',
+  ];
+  $config_factory = \Drupal::configFactory();
+  foreach ($configs as $config) {
+    $editable = $config_factory->getEditable($config);
+    $label = $editable->get('label');
+    $editable->set('label', str_replace('A11Y Paragraphs', 'Folwell', $label));
+    $editable->save();
+  }
+}
+
+function _folwell_paragraphs_config_filter($item, $config_type) {
+  if (strpos($item, $config_type . '.') === 0) {
+    return true;
+  }
+  return false;
 }
