@@ -13,7 +13,7 @@
         button: "Add a pull quote",
         // dialog: 'fwpullquote',
         template:
-          '<aside class="pullquote">' +
+          '<aside class="pullquote display-100">' +
           '<p class="pullquote-content">This is an example of a pull quote. Use this to highlight text that is within the content of your web page.</p>' +
           '<cite class="pullquote-citation">Your pullquote should include a citation</cite>' +
           "</aside>",
@@ -22,7 +22,7 @@
           "pullquote-citation": ".pullquote-citation"
         },
         allowedContent:
-          "aside(!pullquote); p(!pullquote-content); cite(!pullquote-citation)",
+          "aside(!pullquote,display-100,display-50,display-33,display-20); p(!pullquote-content); cite(!pullquote-citation)",
         requiredContent:
           "aside(!pullquote); p(!pullquote-content); cite(!pullquote-citation)",
         upcast: function(element) {
