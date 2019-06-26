@@ -2,19 +2,19 @@
 {% set container_attr = create_attribute() %}
 {% set callout_styles = [
     'callout',
-    style_class == 'callout-horizontal' ? '' : style_class|clean_class
+    style_class == 'callout-horizontal' || style_class == 'callout-hmaroon' ? '' : style_class|clean_class
 ] %}
 {% set overlay_styles = [
     'bg-gold-light',
     'top-left',
     'display-33'
 ] %}
-{% if style_class == 'callout-overlay' %}
+{% if style_class == 'callout-overlay' || style_class == 'callout-omaroon' %}
     {% set callout_styles = callout_styles|merge(overlay_styles) %}
 {% endif %}
 {% set parent_styles = [
     'callout-image',
-    style_class == 'callout-horizontal' ? style_class|clean_class : ''
+    style_class == 'callout-horizontal' || style_class == 'callout-hmaroon' ? style_class|clean_class : ''
 ] %}
 {% block paragraph %}
     {% set classes = classes|merge(parent_styles) %}
