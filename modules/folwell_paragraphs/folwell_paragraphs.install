@@ -323,6 +323,14 @@ function folwell_paragraphs_update_8009(&$sandbox) {
   _folwell_paragraphs_a11y_paragraph_label_update();
 }
 
+/**
+ * Update Callout Style Options
+ */
+function folwell_paragraphs_update_8010(&$sandbox) {
+  $module_path = drupal_get_path('module', 'folwell_paragraphs');
+  folwell_components_edit_configs(['field.storage.paragraph.field_fw_callout_style'], $module_path);
+}
+
 function _folwell_paragraphs_a11y_paragraph_label_update() {
   $configs = [
     'paragraphs.paragraphs_type.a11y_paragraphs_tab_content',
