@@ -46,6 +46,9 @@ function folwell_paragraphs_theme($existing, $type, $theme, $path) {
     'paragraph__folwell_image' => [
       'base hook' => 'paragraph',
     ],
+    'field__paragraph__field_fl_link_list_item' => [
+      'base hook' => 'field'
+    ],
   ];
 }
 
