@@ -50,9 +50,55 @@
   }
 }
 
+.callout-border-all {
+  @include accent-border();
+}
+
+.callout-border-top {
+  @include accent-border(top);
+}
+
+.callout-border-left {
+  @include accent-border(left);
+}
+
+.callout-background {
+  background-color: $gray-lighter;
+}
+
+.callout-maroon {
+  background-color: $maroon;
+  h2,
+  h3,
+  h4,
+  h5,
+  h6,
+  span,
+  p,
+  div {
+    color: $white;
+  }
+  a {
+    color: $gold-light;
+    border-bottom: 1px solid $gold-light;
+    &:hover {
+      background-color: $white;
+      color: $maroon-light;
+      border-bottom: 1px solid $white;
+    }
+  }
+}
+
+.callout-gold {
+  background-color: $gold-light;
+  a:hover {
+    background-color: $white;
+  }
+}
+
 .callout-horizontal {
   display: block;
-  background: $gold-light;
+  @extend .callout-gold;
 
   @include breakpoint($callout-break) {
     display: flex;
@@ -73,22 +119,6 @@
   article {
     margin: 0;
   }
-}
-
-.callout-border-all {
-  @include accent-border();
-}
-
-.callout-border-top {
-  @include accent-border(top);
-}
-
-.callout-border-left {
-  @include accent-border(left);
-}
-
-.callout-background {
-  background-color: $gray-lighter;
 }
 
 /* Specific callout overlay styles */
@@ -143,4 +173,9 @@
 
 .paragraph--type--folwell-callout {
   position: relative;
+}
+
+.callout-hmaroon {
+  @extend .callout-horizontal;
+  background: $maroon;
 }
