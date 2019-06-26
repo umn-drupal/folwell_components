@@ -110,6 +110,13 @@ function folwell_components_editor_js_settings_alter(array &$settings) {
           'class' => 'txt-intro',
         ],
       ],
+      [
+        'name' => 'Link List',
+        'element' => 'ul',
+        'attributes' => [
+          'class' => 'link-list'
+        ],
+      ],
     ];
     $settings['editor']['formats']['folwell_ckeditor']['editorSettings']['stylesSet'] =
       is_array($settings['editor']['formats']['folwell_ckeditor']['editorSettings']['stylesSet']) ?
