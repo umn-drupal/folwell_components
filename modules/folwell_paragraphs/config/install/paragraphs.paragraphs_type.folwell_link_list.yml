@@ -1,0 +1,9 @@
+uuid: bd96a641-40ca-4a6b-8f21-c005e3aac375
+langcode: en
+status: true
+dependencies: {  }
+id: folwell_link_list
+label: 'Folwell Link List'
+icon_uuid: null
+description: ''
+behavior_plugins: {  }

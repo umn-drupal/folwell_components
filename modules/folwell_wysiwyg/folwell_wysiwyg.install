@@ -30,3 +30,11 @@ function folwell_wysiwyg_update_8002(&$sandbox) {
     folwell_components_read_in_new_config($config, $module_path);
   }
 }
+
+/**
+ * Update editor config to allow class on <ul>
+ */
+function folwell_wysiwyg_update_8002(&$sandbox) {
+  $module_path = drupal_get_path('module', 'folwell_wysiwyg');
+  folwell_components_edit_configs(['filter.format.folwell_ckeditor'], $module_path);
+}

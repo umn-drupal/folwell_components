@@ -331,6 +331,27 @@ function folwell_paragraphs_update_8010(&$sandbox) {
   folwell_components_edit_configs(['field.storage.paragraph.field_fw_callout_style'], $module_path);
 }
 
+/**
+ * Update config for link list component
+ */
+function folwell_paragraphs_update_8011(&$sandbox) {
+  $module_path = drupal_get_path('module', 'folwell_paragraphs');
+  folwell_components_read_in_new_config('paragraphs.paragraphs_type.folwell_link_list', $module_path);
+  $link_list_fields = [
+    'field.storage.paragraph.field_fl_link_list_item',
+    'field.field.paragraph.folwell_link_list.field_fl_link_list_item',
+  ];
+  folwell_components_add_field_configs($link_list_fields, $module_path);
+  $display_configs = [
+    'core.entity_form_display.paragraph.folwell_link_list.default',
+    'core.entity_view_display.paragraph.folwell_link_list.default',
+  ];
+  foreach ($display_configs as $config) {
+    folwell_components_read_in_new_config($config, $module_path);
+  }
+
+}
+
 function _folwell_paragraphs_a11y_paragraph_label_update() {
   $configs = [
     'paragraphs.paragraphs_type.a11y_paragraphs_tab_content',
