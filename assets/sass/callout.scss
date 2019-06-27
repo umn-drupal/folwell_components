@@ -81,6 +81,9 @@
   a {
     color: $gold-light;
     border-bottom: 1px solid $gold-light;
+    &:visited {
+      color: $gray-light;
+    }
     &:hover {
       background-color: $white;
       color: $maroon-light;
