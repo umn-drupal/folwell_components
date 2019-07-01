@@ -1,24 +1,16 @@
-.callout h5 a, .callout h4 a, .callout h3 a, .callout h2 a, .callout h1 a, .callout-overlay h5 a, .callout-overlay h4 a, .callout-overlay h3 a, .callout-overlay h2 a, .callout-overlay h1 a, .callout-horizontal h5 a, .callout-horizontal h4 a, .callout-horizontal h3 a, .callout-horizontal h2 a, .callout-horizontal h1 a, .callout-image h5 a, .callout-image h4 a, .callout-image h3 a, .callout-image h2 a, .callout-image h1 a { border-bottom: 0; }
+.callout h5 a, .callout h4 a, .callout h3 a, .callout h2 a, .callout h1 a, .callout-overlay h5 a, .callout-omaroon h5 a, .callout-overlay h4 a, .callout-omaroon h4 a, .callout-overlay h3 a, .callout-omaroon h3 a, .callout-overlay h2 a, .callout-omaroon h2 a, .callout-overlay h1 a, .callout-omaroon h1 a, .callout-horizontal h5 a, .callout-hmaroon h5 a, .callout-horizontal h4 a, .callout-hmaroon h4 a, .callout-horizontal h3 a, .callout-hmaroon h3 a, .callout-horizontal h2 a, .callout-hmaroon h2 a, .callout-horizontal h1 a, .callout-hmaroon h1 a, .callout-image h5 a, .callout-image h4 a, .callout-image h3 a, .callout-image h2 a, .callout-image h1 a { border-bottom: 0; }
 
-.callout h6:first-child, .callout h5:first-child, .callout h4:first-child, .callout h3:first-child, .callout h2:first-child, .callout h1:first-child, .callout-overlay h6:first-child, .callout-overlay h5:first-child, .callout-overlay h4:first-child, .callout-overlay h3:first-child, .callout-overlay h2:first-child, .callout-overlay h1:first-child, .callout-horizontal h6:first-child, .callout-horizontal h5:first-child, .callout-horizontal h4:first-child, .callout-horizontal h3:first-child, .callout-horizontal h2:first-child, .callout-horizontal h1:first-child, .callout-image h6:first-child, .callout-image h5:first-child, .callout-image h4:first-child, .callout-image h3:first-child, .callout-image h2:first-child, .callout-image h1:first-child { margin-top: 0; margin-bottom: 15px; }
+.callout h6:first-child, .callout h5:first-child, .callout h4:first-child, .callout h3:first-child, .callout h2:first-child, .callout h1:first-child, .callout-overlay h6:first-child, .callout-omaroon h6:first-child, .callout-overlay h5:first-child, .callout-omaroon h5:first-child, .callout-overlay h4:first-child, .callout-omaroon h4:first-child, .callout-overlay h3:first-child, .callout-omaroon h3:first-child, .callout-overlay h2:first-child, .callout-omaroon h2:first-child, .callout-overlay h1:first-child, .callout-omaroon h1:first-child, .callout-horizontal h6:first-child, .callout-hmaroon h6:first-child, .callout-horizontal h5:first-child, .callout-hmaroon h5:first-child, .callout-horizontal h4:first-child, .callout-hmaroon h4:first-child, .callout-horizontal h3:first-child, .callout-hmaroon h3:first-child, .callout-horizontal h2:first-child, .callout-hmaroon h2:first-child, .callout-horizontal h1:first-child, .callout-hmaroon h1:first-child, .callout-image h6:first-child, .callout-image h5:first-child, .callout-image h4:first-child, .callout-image h3:first-child, .callout-image h2:first-child, .callout-image h1:first-child { margin-top: 0; margin-bottom: 15px; }
 
-.callout p:last-child, .callout-overlay p:last-child, .callout-horizontal p:last-child, .callout-image p:last-child { margin-bottom: 0; }
+.callout p:last-child, .callout-overlay p:last-child, .callout-omaroon p:last-child, .callout-horizontal p:last-child, .callout-hmaroon p:last-child, .callout-image p:last-child { margin-bottom: 0; }
 
-.callout ul:last-child, .callout-overlay ul:last-child, .callout-horizontal ul:last-child, .callout-image ul:last-child { margin-bottom: 0; }
+.callout ul:last-child, .callout-overlay ul:last-child, .callout-omaroon ul:last-child, .callout-horizontal ul:last-child, .callout-hmaroon ul:last-child, .callout-image ul:last-child { margin-bottom: 0; }
 
 .callout { padding: 1.25em; margin-bottom: 1em; }
 
 .callout:first-child { margin-top: 0; }
 
 @media (min-width: 50em) { .callout:first-child { margin-top: 30px; } }
-
-.callout-horizontal { display: block; background: #ffde7a; }
-
-@media (min-width: 50em) { .callout-horizontal { display: flex; flex-direction: row-reverse; }
-  .callout-horizontal .field--name-field-fw-callout-image { flex: 0 0 auto; width: 60%; }
-  .callout-horizontal .callout { flex: 1 1 auto; } }
-
-.callout-image article, .callout-horizontal article { margin: 0; }
 
 .callout-border-all { border: 4px solid #fc3; }
 
@@ -28,20 +20,39 @@
 
 .callout-background { background-color: #f0efee; }
 
+.callout-gold, .callout-horizontal, .callout-hmaroon, .callout-overlay, .callout-omaroon { background-color: #ffde7a; }
+
+.callout-gold a:hover, .callout-horizontal a:hover, .callout-hmaroon a:hover, .callout-overlay a:hover, .callout-omaroon a:hover { background-color: #fff; }
+
+.callout-horizontal, .callout-hmaroon { display: block; }
+
+@media (min-width: 50em) { .callout-horizontal, .callout-hmaroon { display: flex; flex-direction: row-reverse; }
+  .callout-horizontal .field--name-field-fw-callout-image, .callout-hmaroon .field--name-field-fw-callout-image { flex: 0 0 auto; width: 60%; }
+  .callout-horizontal .callout, .callout-hmaroon .callout { flex: 1 1 auto; } }
+
+.callout-maroon, .callout-hmaroon, .callout-omaroon { background-color: #7a0019; }
+
+.callout-maroon h2, .callout-hmaroon h2, .callout-omaroon h2, .callout-maroon h3, .callout-hmaroon h3, .callout-omaroon h3, .callout-maroon h4, .callout-hmaroon h4, .callout-omaroon h4, .callout-maroon h5, .callout-hmaroon h5, .callout-omaroon h5, .callout-maroon h6, .callout-hmaroon h6, .callout-omaroon h6, .callout-maroon span, .callout-hmaroon span, .callout-omaroon span, .callout-maroon p, .callout-hmaroon p, .callout-omaroon p, .callout-maroon div, .callout-hmaroon div, .callout-omaroon div { color: #fff; }
+
+.callout-maroon a, .callout-hmaroon a, .callout-omaroon a { color: #ffde7a; border-bottom: 1px solid #ffde7a; }
+
+.callout-maroon a:visited, .callout-hmaroon a:visited, .callout-omaroon a:visited { color: #d5d6d2; }
+
+.callout-maroon a:hover, .callout-hmaroon a:hover, .callout-omaroon a:hover { background-color: #fff; color: #900021; border-bottom: 1px solid #fff; }
+
+.callout-image article, .callout-horizontal article, .callout-hmaroon article { margin: 0; }
+
 /* Specific callout overlay styles */
-.callout-overlay { padding: 1.1em; position: absolute; }
+.callout-overlay, .callout-omaroon { padding: 1.1em; margin-bottom: 1em; width: 100%; }
 
-.callout-overlay.display-100 { bottom: 0; }
+@media (min-width: 50em) { .callout-overlay, .callout-omaroon { position: absolute; }
+  .callout-overlay.display-100, .display-100.callout-omaroon { bottom: 0; }
+  .callout-overlay.top-right, .top-right.callout-omaroon, .callout-overlay.top-left, .top-left.callout-omaroon { top: 2em; }
+  .callout-overlay.bottom-right, .bottom-right.callout-omaroon, .callout-overlay.bottom-left, .bottom-left.callout-omaroon { bottom: 2em; }
+  .callout-overlay.top-right, .top-right.callout-omaroon, .callout-overlay.bottom-right, .bottom-right.callout-omaroon { right: 2em; }
+  .callout-overlay.top-left, .top-left.callout-omaroon, .callout-overlay.bottom-left, .bottom-left.callout-omaroon { left: 2em; } }
 
-.callout-overlay.top-right, .callout-overlay.top-left { top: 2em; }
-
-.callout-overlay.bottom-right, .callout-overlay.bottom-left { bottom: 2em; }
-
-.callout-overlay.top-right, .callout-overlay.bottom-right { right: 2em; }
-
-.callout-overlay.top-left, .callout-overlay.bottom-left { left: 2em; }
-
-@media (max-width: 50em) { .callout-overlay { position: relative; top: 0; width: 100%; margin-bottom: 1em; } }
+.callout-image { margin-bottom: 1em; }
 
 .callout-image img { width: 100%; height: auto; display: block; }
 

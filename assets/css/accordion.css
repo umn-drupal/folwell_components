@@ -26,7 +26,7 @@
 
 .accordion h3 .arrow { font-size: 1.25rem; content: "+"; left: 0; line-height: 1.9rem; position: absolute; text-align: center; top: 0; transition: all .5s ease-in-out; width: 2rem; top: 23%; left: .3em; }
 
-.accordion h3.ui-state-active .arrow { -webkit-transform: rotate(-225deg); transform: rotate(-225deg); line-height: 2rem; padding-left: .1rem; font-weight: 600; font-size: 1.4rem; left: .3em; }
+.accordion h3.ui-state-active .arrow { transform: rotate(-225deg); line-height: 2rem; padding-left: .1rem; font-weight: 600; font-size: 1.4rem; left: .3em; }
 
 .ui-widget-content h3 a, .ui-widget-content h3 a:link { border-bottom: none; }
 
