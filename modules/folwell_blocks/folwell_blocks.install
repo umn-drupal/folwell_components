@@ -1,0 +1,12 @@
+<?php
+
+/**
+ * Update paragraph types in folwell component block
+ */
+function folwell_blocks_update_8001(&$sandbox) {
+  $module_path = drupal_get_path('module', 'folwell_blocks');
+  lightning_umn_read_in_new_config(
+    'field.field.block_content.folwell_component.field_fb_folwell_component',
+    $module_path
+  );
+}
