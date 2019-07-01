@@ -66,6 +66,31 @@
   background-color: $gray-lighter;
 }
 
+.callout-gold {
+  background-color: $gold-light;
+  a:hover {
+    background-color: $white;
+  }
+}
+
+.callout-horizontal {
+  display: block;
+  @extend .callout-gold;
+
+  @include breakpoint($callout-break) {
+    display: flex;
+    flex-direction: row-reverse;
+
+    .field--name-field-fw-callout-image {
+      flex: 0 0 auto;
+      width: 60%;
+    }
+    .callout {
+      flex: 1 1 auto;
+    }
+  }
+}
+
 .callout-maroon {
   background-color: $maroon;
   h2,
@@ -92,31 +117,6 @@
   }
 }
 
-.callout-gold {
-  background-color: $gold-light;
-  a:hover {
-    background-color: $white;
-  }
-}
-
-.callout-horizontal {
-  display: block;
-  @extend .callout-gold;
-
-  @include breakpoint($callout-break) {
-    display: flex;
-    flex-direction: row-reverse;
-
-    .field--name-field-fw-callout-image {
-      flex: 0 0 auto;
-      width: 60%;
-    }
-    .callout {
-      flex: 1 1 auto;
-    }
-  }
-}
-
 .callout-image,
 .callout-horizontal {
   article {
@@ -126,43 +126,43 @@
 
 /* Specific callout overlay styles */
 .callout-overlay {
+  @extend .callout-gold;
   padding: 1.1em;
-  position: absolute;
+  margin-bottom: 1em;
+  width: 100%;
 
-  &.display-100 {
-    bottom: 0;
-  }
+  @include breakpoint($callout-break) {
+    position: absolute;
 
-  &.top-right,
-  &.top-left {
-    top: 2em;
-  }
+    &.display-100 {
+      bottom: 0;
+    }
 
-  &.bottom-right,
-  &.bottom-left {
-    bottom: 2em;
-  }
+    &.top-right,
+    &.top-left {
+      top: 2em;
+    }
 
-  &.top-right,
-  &.bottom-right {
-    right: 2em;
-  }
+    &.bottom-right,
+    &.bottom-left {
+      bottom: 2em;
+    }
 
-  &.top-left,
-  &.bottom-left {
-    left: 2em;
-  }
+    &.top-right,
+    &.bottom-right {
+      right: 2em;
+    }
 
-  @include breakpoint(max-width $callout-break) {
-    position: relative;
-    top: 0;
-    width: 100%;
-    //left: 0;
-    margin-bottom: 1em;
+    &.top-left,
+    &.bottom-left {
+      left: 2em;
+    }
   }
 }
 
 .callout-image {
+  margin-bottom: 1em;
+
   img {
     width: 100%;
     height: auto;
@@ -180,5 +180,10 @@
 
 .callout-hmaroon {
   @extend .callout-horizontal;
-  background: $maroon;
+  @extend .callout-maroon;
+}
+
+.callout-omaroon {
+  @extend .callout-overlay;
+  @extend .callout-maroon;
 }
