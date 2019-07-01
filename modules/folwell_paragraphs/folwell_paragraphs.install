@@ -36,12 +36,12 @@ function folwell_paragraphs_install() {
       return _folwell_paragraphs_config_filter($item, 'core');
     });
     foreach ($paragraphs_configs as $pconfig) {
-      folwell_components_read_in_new_config($pconfig, $a11y_path, 'optional');
+      lightning_umn_read_in_new_config($pconfig, $a11y_path, 'optional');
     }
-    folwell_components_add_field_configs($field_storage_configs, $a11y_path, 'optional');
-    folwell_components_add_field_configs($field_configs, $a11y_path, 'optional');
+    lightning_umn_add_field_configs($field_storage_configs, $a11y_path, 'optional');
+    lightning_umn_add_field_configs($field_configs, $a11y_path, 'optional');
     foreach ($core_configs as $cconfig) {
-      folwell_components_read_in_new_config($cconfig, $a11y_path, 'optional');
+      lightning_umn_read_in_new_config($cconfig, $a11y_path, 'optional');
     }
   }
   _folwell_paragraphs_a11y_paragraph_label_update();
@@ -54,7 +54,7 @@ function folwell_paragraphs_update_8001(&$sandbox) {
   $module_path = drupal_get_path('module', 'folwell_paragraphs');
 
   // Create Paragraphs bundle.
-  folwell_components_read_in_new_config('paragraphs.paragraphs_type.folwell_callout', $module_path);
+  lightning_umn_read_in_new_config('paragraphs.paragraphs_type.folwell_callout', $module_path);
 
   // Create field storage & instances.
   $field_configs = [
@@ -65,12 +65,12 @@ function folwell_paragraphs_update_8001(&$sandbox) {
     'field.field.paragraph.folwell_callout.field_fw_callout_image',
     'field.field.paragraph.folwell_callout.field_fw_callout_style',
   ];
-  folwell_components_add_field_configs($field_configs, $module_path);
+  lightning_umn_add_field_configs($field_configs, $module_path);
 
   // Create Paragraphs bundle form.
-  folwell_components_read_in_new_config('core.entity_form_display.paragraph.folwell_callout.default', $module_path);
+  lightning_umn_read_in_new_config('core.entity_form_display.paragraph.folwell_callout.default', $module_path);
   // Create Paragraphs bundle view.
-  folwell_components_read_in_new_config('core.entity_view_display.paragraph.folwell_callout.default', $module_path);
+  lightning_umn_read_in_new_config('core.entity_view_display.paragraph.folwell_callout.default', $module_path);
 
   // Send message to updater.
   $message = t('The Folwell Callout Paragraphs bundle installed successfully');
@@ -95,7 +95,7 @@ function folwell_paragraphs_update_8002(&$sandbox) {
     'paragraphs.paragraphs_type.folwell_image',
   ];
   foreach ($base_configs as $config) {
-    folwell_components_read_in_new_config($config, $module_path);
+    lightning_umn_read_in_new_config($config, $module_path);
   }
 
   // Create field storage & instances.
@@ -107,7 +107,7 @@ function folwell_paragraphs_update_8002(&$sandbox) {
     'field.field.paragraph.folwell_100_image.field_fw_callout_image',
     'field.field.paragraph.folwell_image.field_folwell_image_item',
   ];
-  folwell_components_add_field_configs($field_configs, $module_path);
+  lightning_umn_add_field_configs($field_configs, $module_path);
 
   $display_configs = [
     'core.entity_form_display.paragraph.folwell_20_image.default',
@@ -130,7 +130,7 @@ function folwell_paragraphs_update_8002(&$sandbox) {
     'core.entity_view_display.paragraph.folwell_image.default',
   ];
   foreach ($display_configs as $config) {
-    folwell_components_read_in_new_config($config, $module_path);
+    lightning_umn_read_in_new_config($config, $module_path);
   }
 
 }
@@ -166,7 +166,7 @@ function folwell_paragraphs_update_8003(&$sandbox) {
     'paragraphs.paragraphs_type.fs_slide',
   ];
   foreach ($base_configs as $config) {
-    folwell_components_read_in_new_config($config, $module_path);
+    lightning_umn_read_in_new_config($config, $module_path);
   }
 
   // Create field storage & instances.
@@ -187,7 +187,7 @@ function folwell_paragraphs_update_8003(&$sandbox) {
     'field.field.paragraph.fs_slide.field_fs_slide_link',
     'field.field.paragraph.fs_slide.field_fw_callout_image',
   ];
-  folwell_components_add_field_configs($field_configs, $module_path);
+  lightning_umn_add_field_configs($field_configs, $module_path);
 
   $display_configs = [
     'core.entity_form_display.paragraph.folwell_overlay_slideshow.default',
@@ -202,7 +202,7 @@ function folwell_paragraphs_update_8003(&$sandbox) {
     'core.entity_view_display.paragraph.fs_slide.default',
   ];
   foreach ($display_configs as $config) {
-    folwell_components_read_in_new_config($config, $module_path);
+    lightning_umn_read_in_new_config($config, $module_path);
   }
 }
 
@@ -242,12 +242,12 @@ function folwell_paragraphs_update_8005(&$sandbox) {
     'field.field.paragraph.folwell_image.field_fa_text_item_body',
     'field.field.paragraph.folwell_image.field_fa_accordion_item_header',
   ];
-  folwell_components_add_field_configs($field_configs, $module_path);
+  lightning_umn_add_field_configs($field_configs, $module_path);
   $display_configs = [
     'core.entity_view_display.paragraph.folwell_image.default',
     'core.entity_form_display.paragraph.folwell_image.default',
   ];
-  folwell_components_edit_configs($display_configs, $module_path);
+  lightning_umn_edit_configs($display_configs, $module_path);
 }
 
 /**
@@ -280,7 +280,7 @@ function folwell_paragraphs_update_8006(&$sandbox) {
     'core.entity_view_display.paragraph.fs_overlay_slide.default',
     'core.entity_view_display.paragraph.fs_slide.default',
   ];
-  folwell_components_edit_configs($display_configs, $module_path);
+  lightning_umn_edit_configs($display_configs, $module_path);
 }
 
 /**
@@ -302,7 +302,7 @@ function folwell_paragraphs_update_8007(&$sandbox) {
     'core.entity_form_display.paragraph.fs_overlay_slide.default',
     'core.entity_form_display.paragraph.fs_slide.default',
   ];
-  folwell_components_edit_configs($display_configs, $module_path);
+  lightning_umn_edit_configs($display_configs, $module_path);
 }
 
 /**
@@ -328,7 +328,7 @@ function folwell_paragraphs_update_8009(&$sandbox) {
  */
 function folwell_paragraphs_update_8010(&$sandbox) {
   $module_path = drupal_get_path('module', 'folwell_paragraphs');
-  folwell_components_edit_configs(['field.storage.paragraph.field_fw_callout_style'], $module_path);
+  lightning_umn_edit_configs(['field.storage.paragraph.field_fw_callout_style'], $module_path);
 }
 
 /**
@@ -336,18 +336,18 @@ function folwell_paragraphs_update_8010(&$sandbox) {
  */
 function folwell_paragraphs_update_8011(&$sandbox) {
   $module_path = drupal_get_path('module', 'folwell_paragraphs');
-  folwell_components_read_in_new_config('paragraphs.paragraphs_type.folwell_link_list', $module_path);
+  lightning_umn_read_in_new_config('paragraphs.paragraphs_type.folwell_link_list', $module_path);
   $link_list_fields = [
     'field.storage.paragraph.field_fl_link_list_item',
     'field.field.paragraph.folwell_link_list.field_fl_link_list_item',
   ];
-  folwell_components_add_field_configs($link_list_fields, $module_path);
+  lightning_umn_add_field_configs($link_list_fields, $module_path);
   $display_configs = [
     'core.entity_form_display.paragraph.folwell_link_list.default',
     'core.entity_view_display.paragraph.folwell_link_list.default',
   ];
   foreach ($display_configs as $config) {
-    folwell_components_read_in_new_config($config, $module_path);
+    lightning_umn_read_in_new_config($config, $module_path);
   }
 
 }

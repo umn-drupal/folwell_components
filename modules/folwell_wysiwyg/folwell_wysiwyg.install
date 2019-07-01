@@ -27,7 +27,7 @@ function folwell_wysiwyg_update_8002(&$sandbox) {
     'linkit.linkit_profile.folwell_linkit',
   ];
   foreach ($config_list as $config) {
-    folwell_components_read_in_new_config($config, $module_path);
+    lightning_umn_read_in_new_config($config, $module_path);
   }
 }
 
@@ -36,5 +36,5 @@ function folwell_wysiwyg_update_8002(&$sandbox) {
  */
 function folwell_wysiwyg_update_8003(&$sandbox) {
   $module_path = drupal_get_path('module', 'folwell_wysiwyg');
-  folwell_components_edit_configs(['filter.format.folwell_ckeditor'], $module_path);
+  lightning_umn_edit_configs(['filter.format.folwell_ckeditor'], $module_path);
 }
