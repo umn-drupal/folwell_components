@@ -35,7 +35,7 @@
           }
         },
         allowedContent:
-          "aside(!callout,callout-background,callout-border-all,callout-border-top,callout-border-left,display-100,display-50,display-33,display-25,align-none,align-right,align-left); header(!callout-header); div(!callout-content)",
+          "aside(!callout,callout-background,callout-maroon,callout-gold,callout-border-all,callout-border-top,callout-border-left,display-100,display-50,display-33,display-25,align-none,align-right,align-left); header(!callout-header); div(!callout-content)",
         requiredContent: "aside(!callout); div(!callout-content)",
         upcast: function(element) {
           return element.name === "aside" && element.hasClass("callout");
@@ -43,6 +43,10 @@
         init: function() {
           if (this.element.hasClass("callout-background")) {
             this.setData("style", "callout-background");
+          } else if (this.element.hasClass("callout-gold")) {
+            this.setData("style", "callout-gold");
+          } else if (this.element.hasClass("callout-maroon")) {
+            this.setData("style", "callout-maroon");
           } else if (this.element.hasClass("callout-border-all")) {
             this.setData("style", "callout-border-all");
           } else if (this.element.hasClass("callout-border-top")) {
@@ -69,6 +73,8 @@
         },
         data: function() {
           this.element.removeClass("callout-background");
+          this.element.removeClass("callout-maroon");
+          this.element.removeClass("callout-gold");
           this.element.removeClass("callout-border-all");
           this.element.removeClass("callout-border-top");
           this.element.removeClass("callout-border-left");

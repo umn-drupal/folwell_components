@@ -13,7 +13,9 @@
               type: "select",
               label: "Select callout style",
               items: [
-                ["Background", "callout-background"],
+                ["Grey Background", "callout-background"],
+                ["Gold Background", "callout-gold"],
+                ["Maroon Background", "callout-maroon"],
                 ["Box", "callout-border-all"],
                 ["Top Border", "callout-border-top"],
                 ["Left Border", "callout-border-left"]
