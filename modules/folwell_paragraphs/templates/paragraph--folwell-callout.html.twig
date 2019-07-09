@@ -20,9 +20,11 @@
     <aside{{ attributes.addClass(classes) }}>
         {% block content %}
             {{ content.field_fw_callout_image }}
-            <div{{ container_attr.addClass(callout_styles) }}>
-                {{ content.field_fa_text_item_body }}
-            </div>
+            {% if content.field_fa_text_item_body|render %}
+                <div{{ container_attr.addClass(callout_styles) }}>
+                    {{ content.field_fa_text_item_body }}
+                </div>
+            {% endif %}
         {% endblock %}
     </aside>
 {% endblock paragraph %}
