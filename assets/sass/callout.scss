@@ -114,6 +114,9 @@
       color: $maroon-light;
       border-bottom: 1px solid $white;
     }
+    &:focus {
+      color: $gray-darker;
+    }
   }
 }
 
