@@ -352,6 +352,16 @@ function folwell_paragraphs_update_8011(&$sandbox) {
 
 }
 
+/**
+ * Update field label for table header.
+ */
+function folwell_paragraphs_update_8012(&$sandbox) {
+  $config_factory = \Drupal::configFactory();
+  $editable = $config_factory->getEditable('field.field.paragraph.fa_table.field_fa_accordion_item_header');
+  $editable->set('label', 'Table Name');
+  $editable->save();
+}
+
 function _folwell_paragraphs_a11y_paragraph_label_update() {
   $configs = [
     'paragraphs.paragraphs_type.a11y_paragraphs_tab_content',
