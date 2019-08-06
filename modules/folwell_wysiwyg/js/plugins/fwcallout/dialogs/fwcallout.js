@@ -13,12 +13,12 @@
               type: "select",
               label: "Select callout style",
               items: [
-                ["Grey Background", "callout-background"],
+                ["Gray Background", "callout-background"],
                 ["Gold Background", "callout-gold"],
                 ["Maroon Background", "callout-maroon"],
-                ["Box", "callout-border-all"],
-                ["Top Border", "callout-border-top"],
-                ["Left Border", "callout-border-left"]
+                ["Gold Border", "callout-border-all"],
+                ["Gold Top Line", "callout-border-top"],
+                ["Gold Left Line", "callout-border-left"]
               ],
               default: "callout-background",
               setup: function(widget) {

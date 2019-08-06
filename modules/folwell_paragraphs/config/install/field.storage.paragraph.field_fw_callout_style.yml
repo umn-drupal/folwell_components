@@ -12,19 +12,22 @@ settings:
   allowed_values:
     -
       value: callout-background
-      label: 'Lighter Gray'
+      label: 'Gray Background'
+    -
+      value: callout-gold
+      label: 'Gold Background'
     -
       value: callout-maroon
-      label: Maroon
+      label: 'Maroon Background'
     -
       value: callout-border-all
       label: 'Gold Border'
     -
       value: callout-border-top
-      label: 'Gold Line'
+      label: 'Gold Top Line'
     -
-      value: callout-gold
-      label: 'Gold Background'
+      value: callout-border-left
+      label: 'Gold Left Line'
     -
       value: callout-horizontal
       label: 'Horizontal Gold'

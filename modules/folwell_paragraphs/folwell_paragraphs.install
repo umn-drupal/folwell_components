@@ -362,6 +362,14 @@ function folwell_paragraphs_update_8012(&$sandbox) {
   $editable->save();
 }
 
+/**
+ * Update callout style labels.
+ */
+function folwell_paragraphs_update_8013(&$sandbox) {
+  $module_path = drupal_get_path('module', 'folwell_paragraphs');
+  lightning_umn_edit_configs(['field.storage.paragraph.field_fw_callout_style'], $module_path);
+}
+
 function _folwell_paragraphs_a11y_paragraph_label_update() {
   $configs = [
     'paragraphs.paragraphs_type.a11y_paragraphs_tab_content',
