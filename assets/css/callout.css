@@ -40,6 +40,8 @@
 
 .callout-maroon a:hover, .callout-hmaroon a:hover, .callout-omaroon a:hover { background-color: #fff; color: #900021; border-bottom: 1px solid #fff; }
 
+.callout-maroon a:focus, .callout-hmaroon a:focus, .callout-omaroon a:focus { color: #333; }
+
 .callout-image article, .callout-horizontal article, .callout-hmaroon article { margin: 0; }
 
 /* Specific callout overlay styles */
